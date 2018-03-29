@@ -24,19 +24,19 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('/w3images/parallax1.jpg');
+    background-image: url('./assets/WisconsinRiver.jpg');
     min-height: 100%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-    background-image: url("/w3images/parallax2.jpg");
+    background-image: url("./assets/IMG_1618.jpg");
     min-height: 400px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-    background-image: url("/w3images/parallax3.jpg");
+    background-image: url("./assets/DSCN0497.JPG");
     min-height: 400px;
 }
 
@@ -79,20 +79,23 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">DORN MOORE</span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">DORN MOORE </span>
   </div>
 </div>
 
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
+
   <h3 class="w3-center">ABOUT ME</h3>
   <p class="w3-center"><em>Conservation GIS and Cartography</em></p>
-    <p>I've been a geographer with a focus on using geospatial tools to strengthen environmental conservation around the world for 20 years. The majority of that time, I've worked with the International Crane Foundation enabling our team to ensure a future for the world's 15 species of cranes.</p>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>Dorn Moore</b></p><br>
-      <img src="./assets/dorn1970s.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+  <div class="w3-col m6 w3-center w3-padding-large">
+      
+      <img src="./assets/dorn1970s.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333"><p><b>Dorn Moore</b></p>
     </div>
+  <p>I've been a geographer with a focus on using geospatial tools to strengthen environmental conservation around the world for 20 years. The majority of that time, I've worked with the International Crane Foundation enabling our team to ensure a future for the world's 15 species of cranes.</p>
+  <p>In the past few years I've been working on getting a second Masters degree, again in Geography, specifically on updating my expertise in the field for web mapping and coding. So much ahs changed in recent years.</p>
+  <div class="w3-row">
+    
 
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
@@ -100,7 +103,8 @@ body, html {
       <p>Suddenly I had discovered this other world of data and technology inside the deeper field of geography. I was lucky enough to have an academic advisor who said, "The problem is that you are a geographer that happens to be interested in Latin America." She helped me switch into the Geography program and the rest is history.</p>
     </div>
   </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+  <!--
+  <p class="w3-large w3-center w3-padding-16">Where I excel:</p>
   <p class="w3-wide">GIS</p>
   <div class="w3-light-grey">
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
@@ -118,7 +122,7 @@ body, html {
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
   </div>
 </div>
-
+-->
 
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
@@ -139,18 +143,18 @@ body, html {
     </div>
 
     <div class="w3-col m3">
-      <img src="./assets/Topo.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Relief Reference map example">
+      <img src="./assets/topo.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Relief Reference map example">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+      <img src="./assets/Sandhill-Cranes.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sandhill Cranes Range Map">
     </div>
 
     <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
+      <img src="./assets/zambia.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Zambia Wetlands Locator Map">
     </div>
   </div>
-
+<!--
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
       <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
@@ -167,6 +171,7 @@ body, html {
     <div class="w3-col m3">
       <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
+  -->
     <!--<button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button> -->
   </div>
 </div>
@@ -192,10 +197,9 @@ body, html {
   <h3 class="w3-center">GET IN TOUCH</h3>
   <p class="w3-center"><em>Need some help on a project or just want to chat?</em></p>
 
-  <div class="w3-row w3-padding-32 w3-section">
+
     <div class="w3-col m4 w3-container">
-      <!-- Add Google Maps -->
-      <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+      
     </div>
     <div class="w3-col m8 w3-panel">
       <div class="w3-large w3-margin-bottom">
@@ -205,7 +209,6 @@ body, html {
         <a href="https://www.linkedin.com/in/dornmoore/" target="_blank"><i class="fa fa-linkedin fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i></a> <a href="https://www.linkedin.com/in/dornmoore/" target="_blank">LinkedIn</a><br>
         <a href="https://github.com/DornMoore" target="_blank"><i class="fa fa-github fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i></a> <a href="https://github.com/DornMoore" target="_blank">GitHub</a> <br>
       </div>
-      </form>
     </div>
   </div>
 </div>
