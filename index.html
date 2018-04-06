@@ -1,283 +1,170 @@
 <!DOCTYPE html>
-<html>
-<title>Dorn Moore | Spatial Analyst and Cartographer</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    color: #777;
-    line-height: 1.8;
-}
+<html lang="en">
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="maps, cartography" />
+    <title>Dorn Moore | Spatial Analyst and Cartographer</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-    background-image: url('./assets/wisconsinriver.jpg');
-    min-height: 100%;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-    background-image: url("./assets/IMG_1618.jpg");
-    min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-    background-image: url("./assets/DSCN0497.JPG");
-    min-height: 400px;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: scroll;
-    }
-}
-</style>
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+    <!-- Navbar (sit on top) -->
+    <div class="top">
+        <div class="bar" id="myNavbar">
+            <a class="bar-item button hover-black hide-medium hide-large right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+            <a href="#home" class="bar-item button">HOME</a>
+            <a href="#about" class="bar-item button hide-small"><i class="fa fa-user"></i> ABOUT</a>
+            <a href="#portfolio" class="bar-item button hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+            <a href="#contact" class="bar-item button hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+            <a href="#" class="bar-item button hide-small right hover-red">
       <i class="fa fa-search"></i>
     </a>
-  </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-  </div>
-</div>
-
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">DORN MOORE </span>
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>Conservation GIS and Cartography</em></p>
-  <div class="w3-col m6 w3-center w3-padding-large">
-      
-      <img src="./assets/dorn1970s.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333"><p><b>Dorn Moore</b></p>
+        </div>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="bar-block white hide hide-large hide-medium">
+            <a href="#about" class="bar-item button" onclick="toggleFunction()">ABOUT</a>
+            <a href="#portfolio" class="bar-item button" onclick="toggleFunction()">PORTFOLIO</a>
+            <a href="#contact" class="bar-item button" onclick="toggleFunction()">CONTACT</a>
+            <a href="#" class="bar-item button">SEARCH</a>
+        </div>
     </div>
-  <p>I've been a geographer with a focus on using geospatial tools to strengthen environmental conservation around the world for 20 years. The majority of that time, I've worked with the International Crane Foundation enabling our team to ensure a future for the world's 15 species of cranes.</p>
-  <p>In the past few years I've been working on getting a second Masters degree, again in Geography, specifically on updating my expertise in the field for web mapping and coding. So much ahs changed in recent years.</p>
-  <div class="w3-row">
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 display-container opacity-min" id="home">
+        <div class="display-middle" style="white-space:nowrap;">
+            <span class="center padding-large black xlarge wide animate-opacity">DORN MOORE </span>
+        </div>
+    </div>
+    <!-- Container (About Section) -->
+    <div class="content container padding-64" id="about">
+        <h3 class="center">ABOUT ME</h3>
+        <p class="center"><em>Conservation GIS and Cartography</em></p>
+        <div class="col m6 center padding-large">
+            <img src="./assets/dorn1970s.jpg" class="round image" alt="Photo of Me" width="500" height="333">
+            <p><b>Dorn Moore</b></p>
+        </div>
+        <p>I've been a geographer with a focus on using geospatial tools for environmental conservation around the world for 20 years. The majority of that time, I've worked with the <a href="https://www.savingcranes.org" target="_blank">International Crane Foundation</a> to ensure a future for the world's 15 species of cranes.</p>
+        <p>In the fall of 2016, I decided that I needed to catch up with the changes that happened in GIS techniques since I finished my MA in 1998. I've been working on getting a second Masters degree, again in Geography, through the <a href="https://geography.wisc.edu/gis/onlinemasters/" target="_blank">University of Wisconsin's Online Professional MS in GIS and Web Map Programming</a>. I am constantly amazed at the changes over the past 20 years. </p>
+        <div class="row">
+            <!-- Hide this text on small devices -->
+            <div class="col  hide-small padding-large">
+                <p>When I was at the University of Arizona in 1996, I took a class on Remote Sensing; It was a turning point. I had finished my undergraduate work with a focus in Anthropology and Spanish, and I was beginning my first semester as a graduate student working towards a Master's degree in Latin American Studies focusing on environmental conservation issues. The Remote Sensing course had been a filler course where I could learn something new and fulfill a geography requirement. </p>
+                <p>Suddenly I had discovered this other world of data and technology inside the deeper field of geography. Further, I had a knack for it. The gis and data relationships came naturally for me. I was lucky enough to have an academic advisor who helped me switch into the Geography program and the rest is history.</p>
+            </div>
+        </div>
+        
+        <!-- Second Parallax Image with Portfolio Text -->
+        <div class="bgimg-2 display-container opacity-min">
+            <div class="display-middle">
+                <span class="xxlarge text-white wide">PORTFOLIO</span>
+            </div>
+        </div>
+        <!-- Container (Portfolio Section) -->
+        <div class="content container padding-64" id="portfolio">
+            <h3 class="center">MY WORK</h3>
+            <p class="center"><em>Here are some of my latest projects.<br> Click on the images to make them bigger</em></p>
+            <br>
+            <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+            <div class="row-padding center">
+                <div class="col m3">
+                    <img src="./assets/crane-count-thumbnail.png" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="Future for Sandhill cranes Infographic">
+                </div>
+                <div class="col m3">
+                    <img src="./assets/topo.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="Relief Reference map example">
+                </div>
+                <div class="col m3">
+                    <img src="./assets/sandhillcranes.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="Sandhill Cranes Range Map">
+                </div>
+                <div class="col m3">
+                    <img src="./assets/zambia.jpg" style="width:100%" onclick="onClick(this)" class="hover-opacity" alt="Zambia Wetlands Locator Map">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="modal black" onclick="this.style.display='none'">
+        <span class="button large black display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="modal-content animate-zoom center transparent padding-64">
+            <img id="img01" class="image">
+            <p id="caption" class="opacity large"></p>
+        </div>
+    </div>
+    <!-- Third Parallax Image with Portfolio Text -->
+    <div class="bgimg-3 display-container opacity-min">
+        <div class="display-middle">
+            <span class="xxlarge text-white wide">CONTACT</span>
+        </div>
+    </div>
+    <!-- Container (Contact Section) -->
+    <div class="content container padding-64" id="contact">
+        <h3 class="center">GET IN TOUCH</h3>
+        <p class="center"><em>Need some help on a project or just want to chat?</em></p>
+        <div class="col m4 container">
+        </div>
+        <div class="col m8 panel">
+            <div class="large margin-bottom">
+                <i class="fa fa-phone fa-fw hover-text-black xlarge margin-right"></i> Skype: dornmoore
+                <br>
+                <i class="fa fa-envelope fa-fw hover-text-black xlarge margin-right"></i> Email: dornmoore@gmail.com
+                <br>
+                <a href="https://twitter.com/icfmaps" target="_blank"><i class="fa fa-twitter fa-fw hover-text-black xlarge margin-right"></i></a> Twitter: <a href="https://twitter.com/icfmaps" target="_blank">@icfmaps</a>
+                <br>
+                <a href="https://www.linkedin.com/in/dornmoore/" target="_blank"><i class="fa fa-linkedin fa-fw hover-text-black xlarge margin-right"></i></a> <a href="https://www.linkedin.com/in/dornmoore/" target="_blank">LinkedIn</a>
+                <br>
+                <a href="https://github.com/DornMoore" target="_blank"><i class="fa fa-github fa-fw hover-text-black xlarge margin-right"></i></a> <a href="https://github.com/DornMoore" target="_blank">GitHub</a>
+                <br>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Footer -->
+    <footer class="center black padding-64 opacity hover-opacity-off">
+        <a href="#home" class="button light-grey"><i class="fa fa-arrow-up margin-right"></i>To the top</a>
+        <div class="xlarge section">
+            <a href="https://twitter.com/icfmaps" target="_blank"><i class="fa fa-twitter hover-opacity"></i></a>
+            <a href="https://www.linkedin.com/in/dornmoore/" target="_blank"><i class="fa fa-linkedin hover-opacity"></i></a>
+            <a href="https://github.com/DornMoore" target="_blank"><i class="fa fa-github hover-opacity"></i></a>
+        </div>
+    </footer>
+
+    <script>
     
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>When I was at the University of Arizona in 1996, I took a class on Remote Sensing; It was a turning point. I had finished my undergraduate work with a focus in Anthropology and Spanish, and I was beginning my first semester as a graduate student working towards a Master's degree in Latin American Studies focusing on environmental conservation issues. The Remote Sensing course had been a filler of a course that I figured I could learn something new and fulfill a geography requirement. </p>
-      <p>Suddenly I had discovered this other world of data and technology inside the deeper field of geography. I was lucky enough to have an academic advisor who said, "The problem is that you are a geographer that happens to be interested in Latin America." She helped me switch into the Geography program and the rest is history.</p>
-    </div>
-  </div>
-  <!--
-  <p class="w3-large w3-center w3-padding-16">Where I excel:</p>
-  <p class="w3-wide">GIS</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide">Spatial Analysis</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:80%">80%</div>
-  </div>
-  <p class="w3-wide">Cartography</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:80%">80%</div>
-  </div>
-  <p class="w3-wide">Python</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
-  </div>
-</div>
--->
-
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest projects.<br> Click on the images to make them bigger</em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="./assets/crane-count-thumbnail.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Future for Sandhill cranes Infographic">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="./assets/topo.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Relief Reference map example">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="./assets/sandhillcranes.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sandhill Cranes Range Map">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="./assets/zambia.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Zambia Wetlands Locator Map">
-    </div>
-  </div>
-<!--
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-  -->
-    <!--<button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button> -->
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
-
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
-  </div>
-</div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">GET IN TOUCH</h3>
-  <p class="w3-center"><em>Need some help on a project or just want to chat?</em></p>
-
-
-    <div class="w3-col m4 w3-container">
-      
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Skype: dornmoore<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: dornmoore@gmail.com<br>
-        <a href="https://twitter.com/icfmaps" target="_blank"><i class="fa fa-twitter fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i></a> Twitter: <a href="https://twitter.com/icfmaps" target="_blank">@icfmaps</a><br>
-        <a href="https://www.linkedin.com/in/dornmoore/" target="_blank"><i class="fa fa-linkedin fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i></a> <a href="https://www.linkedin.com/in/dornmoore/" target="_blank">LinkedIn</a><br>
-        <a href="https://github.com/DornMoore" target="_blank"><i class="fa fa-github fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i></a> <a href="https://github.com/DornMoore" target="_blank">GitHub</a> <br>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <a href="https://twitter.com/icfmaps" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-    <a href="https://www.linkedin.com/in/dornmoore/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-    <a href="https://github.com/DornMoore" target="_blank"><i class="fa fa-github w3-hover-opacity"></i></a>
-  </div>
-
-</footer>
- 
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
     }
-}
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
+    // Change style of navbar on scroll
+    window.onscroll = function() { myFunction() };
+
+    function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navbar.className = "bar" + " card" + " animate-top" + " white";
+        } else {
+            navbar.className = navbar.className.replace(" card animate-top white", "");
+        }
     }
-}
-</script>
-<!--
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
--->
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("show") == -1) {
+            x.className += " show";
+        } else {
+            x.className = x.className.replace(" show", "");
+        }
+    }
+    </script>
+    
 </body>
+
 </html>
