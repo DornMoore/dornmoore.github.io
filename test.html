@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Add live realtime data</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZG9ybm1vb3JlIiwiYSI6ImNpc2h3MHdmbDAwOGEyb2xzenV5aDNmaGoifQ.kuZDCRIvE_BQbpUl6KxwbQ';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/dornmoore/cjgkxnjtz001m2ro8ujzgwwwk',
+    zoom: 3.6,
+    maxZoom: 9
+});
+
+var myData = 'https://rawgit.com/DornMoore/dornmoore.github.io/master/argos_ptt.geojson';
+
+map.on('load', function(e) {
+
+    map.addLayer({
+        "id": "wcep_obs",
+        "type": "circle",
+        "source": {
+          type: "geojson",
+          data: myData
+        },
+        "paint":{
+            // make circles larger as the user zooms from z12 to z22
+            'circle-radius': {
+                'base': 6 ,
+                'stops': [[12, 6], [22, 180]]
+            },
+            // color circles by ethnicity, using a match expression
+            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
+            'circle-color': [
+                'match',
+                ['get', 'wcep_id'],
+                '2017', '#8A1F03',
+                '2016', '#644865',
+                /* other */ '#3B6E8F'
+            ]
+        }
+    });
+});
+</script>
+
+</body>
+</html>
