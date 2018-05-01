@@ -19,9 +19,9 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZG9ybm1vb3JlIiwiYSI6ImNpc2h3MHdmbDAwOGEyb2xzenV5aDNmaGoifQ.kuZDCRIvE_BQbpUl6KxwbQ';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/dornmoore/cjgkxnjtz001m2ro8ujzgwwwk',
+    style: 'mapbox://styles/dornmoore/cjgmwzszr00022tp2m0jv2g7v',
     zoom: 3.6,
-    maxZoom: 9
+    maxZoom: 9.5
 });
 
 var myData = 'https://rawgit.com/DornMoore/dornmoore.github.io/master/argos_ptt.geojson';
@@ -45,11 +45,14 @@ map.on('load', function(e) {
             // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
             'circle-color': [
                 'match',
-                ['get', 'wcep_id'],
+                ['get', 'cohort'],
                 '2017', '#8A1F03',
                 '2016', '#644865',
                 /* other */ '#3B6E8F'
-            ]
+            ],
+            'circle-stroke-width':1,
+            'circle-stroke-color':'#fff',
+            'circle-stroke-opacity':0.8
         }
     });
 });
