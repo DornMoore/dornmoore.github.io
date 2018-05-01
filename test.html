@@ -65,9 +65,9 @@
 		  padding: 10px;
 		  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 		  line-height: 18px;
-		  height: 150px;
+		  height: 55px;
 		  margin-bottom: 40px;
-		  width: 100px;
+		  width: 150px;
 		}
 
 		.legend-key {
@@ -83,7 +83,7 @@
 <body>
 
     <div id='map'></div>
-    <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+    <div class='map-overlay' id='features'><h3>WCEP Bird Locations in the past 30 days.</h3><div id='pd'><p>Hover over an observation for details.</p></div></div>
 	<div class='map-overlay' id='legend'></div>
 
 <script>
@@ -92,7 +92,8 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/dornmoore/cjgmwzszr00022tp2m0jv2g7v',
     zoom: 3.6,
-    maxZoom: 9.5
+    maxZoom: 9.5,
+    fitBounds:([[-133.2421875, 16.972741], [-47.63671875, 52.696361]])
 });
 
 var myData = 'https://rawgit.com/DornMoore/dornmoore.github.io/master/argos_ptt.geojson';
@@ -107,23 +108,24 @@ map.on('load', function(e) {
           data: myData
         },
         "paint":{
-            // make circles larger as the user zooms from z12 to z22
+            // make circles larger as the user zooms from z8 to z22
             'circle-radius': {
-                'base': 6 ,
-                'stops': [[12, 6], [22, 180]]
+                'base': 4 ,
+                'stops': [[4, 8], [10, 20]]
             },
-            // color circles by ethnicity, using a match expression
+            'circle-stroke-width':1,
+            'circle-stroke-color':'#fff',
+            'circle-stroke-opacity':0.8,
+            // color circles by cohort year, using a match expression
             // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
             'circle-color': [
                 'match',
                 ['get', 'cohort'],
-                '2017', '#8A1F03',
-                '2016', '#644865',
-                /* other */ '#3B6E8F'
-            ],
-            'circle-stroke-width':1,
-            'circle-stroke-color':'#fff',
-            'circle-stroke-opacity':0.8
+                '2017', '#E37F1C',
+                '2016', '#F1AF14',
+                /* other */ '#919A3E'
+            ]
+            
         }
     });
     map.on('mousemove', function(e) {
@@ -131,15 +133,33 @@ map.on('load', function(e) {
                 layers: ['wcep_obs']
               });
 
-              if (states.length > 0) {
-                document.getElementById('pd').innerHTML = '<h3><strong>' + obs[0].properties.wcep_id + '</strong></h3><p><strong><em>' + states[0].properties.obsdate + '</strong> people per square mile</em></p>';
+              if (obs.length > 0) {
+                document.getElementById('pd').innerHTML = '<p>WCEP ID: <strong>' + obs[0].properties.wcep_id + '</strong></br><em> Last observed on <strong>' + obs[0].properties.obs_date + '</strong></em></p>';
               } else {
-                document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
+                document.getElementById('pd').innerHTML = '<p>Hover over a an observation!</p>';
               }
             });
     
     map.getCanvas().style.cursor = 'default';
     map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
+
+    var layers = ['2017 Cohort', '2016 Cohort', 'Older Cohorts'];
+    var colors = ['#E37F1C', '#F1AF14', '#919A3E'];
+            
+    for (i = 0; i < layers.length; i++) {
+      var layer = layers[i];
+      var color = colors[i];
+      var item = document.createElement('div');
+      var key = document.createElement('span');
+      key.className = 'legend-key';
+      key.style.backgroundColor = color;
+
+      var value = document.createElement('span');
+      value.innerHTML = layer;
+      item.appendChild(key);
+      item.appendChild(value);
+      legend.appendChild(item);
+    }
 });
 </script>
 
