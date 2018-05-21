@@ -134,7 +134,7 @@ map.on('load', function(e) {
               });
 
               if (obs.length > 0) {
-                document.getElementById('pd').innerHTML = '<p>WCEP ID: <strong>' + obs[0].properties.wcep_id + '</strong></br><em> Last observed on <strong>' + obs[0].properties.obs_date + '</strong></em></p>';
+                document.getElementById('pd').innerHTML = '<p>WCEP ID: <strong>' + obs[0].properties.wcep_id + '</strong></br><em> Last observed on <strong>' + obs[0].properties.obs_ts + '</strong></em></p>';
               } else {
                 document.getElementById('pd').innerHTML = '<p>Hover over a an observation!</p>';
               }
