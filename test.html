@@ -90,9 +90,10 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZG9ybm1vb3JlIiwiYSI6ImNpc2h3MHdmbDAwOGEyb2xzenV5aDNmaGoifQ.kuZDCRIvE_BQbpUl6KxwbQ';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/dornmoore/cjgmwzszr00022tp2m0jv2g7v',
+    style: 'mapbox://styles/dornmoore/cjhgvt1st0fqt2rpeel1z4byu',
     zoom: 3.6,
     maxZoom: 9.5,
+    center: [-90.4, 34.8],
     fitBounds:([[-133.2421875, 16.972741], [-47.63671875, 52.696361]])
 });
 
@@ -134,14 +135,13 @@ map.on('load', function(e) {
               });
 
               if (obs.length > 0) {
-                document.getElementById('pd').innerHTML = '<p>WCEP ID: <strong>' + obs[0].properties.wcep_id + '</strong></br><em> Last observed on <strong>' + obs[0].properties.obs_date + '</strong></em></p>';
+                document.getElementById('pd').innerHTML = '<p>WCEP ID: <strong>' + obs[0].properties.wcep_id + '</strong></br><em> Last observed on <strong>' + obs[0].properties.obs_ts + '</strong></em></p>';
               } else {
                 document.getElementById('pd').innerHTML = '<p>Hover over a an observation!</p>';
               }
             });
     
     map.getCanvas().style.cursor = 'default';
-    map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
 
     var layers = ['2017 Cohort', '2016 Cohort', 'Older Cohorts'];
     var colors = ['#E37F1C', '#F1AF14', '#919A3E'];
