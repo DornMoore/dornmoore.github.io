@@ -7,10 +7,10 @@ var map = L.map('mapid', {
 	minZoom: 2
 });
 
-map.dragging.disable();
-map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable();
+// map.dragging.disable();
+// map.touchZoom.disable();
+// map.doubleClickZoom.disable();
+// map.scrollWheelZoom.disable();
 
 //add tile layer...replace project id and accessToken with your own
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {

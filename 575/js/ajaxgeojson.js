@@ -20,10 +20,9 @@ function getData(){
             mydata = response;
             //call function to create proportional symbols
             info = dataProcessing(response);
+            createSequenceControls(map, info.years);
             createPropSymbols(info.years, info.types, response, map);
-            createSliderControls(map, info.years);
             
-            rankedList(mydata, 'ghg1970');
 
         },
         error: function() { 
@@ -43,16 +42,21 @@ function updateRankList(data, type, year){
     myList += '</ol>';
 
     var tableTitle = 'tableTitle';
+    var top10 = '';
     if (type === 'pop') {
-        tableTitle = '<div id="sidebar"><div id="sidebar-title">' +year+'\'s Most Populous Population Countries</center></div><div id="rank-list">' + myList +'</div>'
+        tableTitle = '<div id="sidebar-title">' +year+'\'s Most Populous Countries</center></div>'
+        top10='<div id="rank-list">' + myList +'</div>'
     } else if (type === 'ghg') {
-        tableTitle = '<div id="sidebar"><div id="sidebar-title">'+year+'\'s Top Green House Gas Polluters</div><div id="rank-list">' + myList +'</div>'
+        tableTitle = '<div id="sidebar-title">'+year+'\'s Top Green House Gas Polluters</div>'
+        top10='<div id="rank-list">' + myList +'</div>'
     } else if (type === 'pcghg') {
-        tableTitle = '<div id="sidebar"><div id="sidebar-title"><center>'+year+'\'s Top Per Capita Green House Gas Polluters</center></div><div id="rank-list">' + myList +'</div>'
+        tableTitle = '<div id="sidebar-title">'+year+'\'s Top Per Capita Green House Gas Polluters</div>'
+        top10='<div id="rank-list">' + myList +'</div>'
     };
     
     //console.log(newTitle);
-    $('#sidebar').replaceWith(tableTitle);
+    $('#sidebar-title').replaceWith(tableTitle);
+    $('#rank-list').replaceWith(top10);
 };
 
 function updateTitle(type, year){
@@ -152,41 +156,44 @@ function dataProcessing(data){
 };
 
 
-function createSliderControls(map, timestops) {
-    var sliderControl = L.Control.extend( { 
-        options: {
-            position: 'topright'
-        },
-        onAdd: function(map) {
-            var slider = L.DomUtil.create('input', 'range-slider');
-      
-            L.DomEvent.addListener(slider, 'mousedown', function(e) { 
-                L.DomEvent.stopPropagation(e); 
-                map.dragging.disable();
-            });
+function createSequenceControls(map, timestops){
+    //create range input element (slider)
+    $('#controls').append('<button class="skip" id="reverse">Previous</button>');
+   
+    $('#controls').append('<input class="range-slider" type="range">');
 
-            L.DomEvent.addListener(slider, 'mouseout', function(e) { 
-                map.dragging.enable();
-            });
-
-            $(slider)
-                .attr({'type':'range', 
-                    'max': timestops[timestops.length-1], 
-                    'min': timestops[0], 
-                    'step': 1})
-                .on('input change', function() {
-                //console.log($(this).val().toString());
-                updatePropSymbols(attType,$(this).val().toString());
-                updateTitle(attType,$(this).val().toString());
-            });
-
-            return slider;
-        }
+    //set slider attributes
+    $('.range-slider').attr({
+        max: timestops[timestops.length-1],
+        min: 0,
+        min: timestops[0], 
+        step: 1
     });
-    //sliderControl.addTo(map)
-    map.addControl(new sliderControl());
-};
 
+    $('#controls').append('<button class="skip" id="forward">Next</button>');
+    $('#reverse').html('<i class="fas fa-arrow-circle-left"></i>');
+    $('#forward').html('<i class="fas fa-arrow-circle-right"></i>');
+    
+    $('.skip').click(function() {
+        var index = $('.range-slider').val();
+        
+        //Step 6: increment or decrement depending on button clicked
+        if ($(this).attr('id') == 'forward'){
+            index++;
+            //console.log(index);
+            index = index > timestops[timestops.length-1] ? timestops[0] : index;
+        } else if ($(this).attr('id') == 'reverse'){
+            index--;
+            // if past the first attribute, wrap around to last attribute
+            index = index < timestops[0] ? timestops[timestops.length-1] : index;
+            //index = index < 0 ? 6 : index;
+        };
+        $('.range-slider').val(index);
+
+        updatePropSymbols(attType, index);
+        updateTitle(attType,index);
+    });   
+};
 
 
 //For each feature...
@@ -280,8 +287,8 @@ function updatePropSymbols(type, year){
 
         if (props) {
             //loop to add feature property names and values to html string
-            popupContent+= '<div id="popup_title">' + props['country_name'] + '</div>'
-            popupContent+= '<div id=popup_content">' + valuestring + 'in '+ year +'</div>';
+            popupContent+= '<div id="popup_title">' + props['country_name'] + ' - ' +year+'</div>'
+            popupContent+= '<div id=popup_content">' + valuestring + '</div>';
             layer.bindPopup(popupContent);
         };
     })
@@ -340,16 +347,21 @@ function createPropSymbols(years, types, data, map){
                 },
                 mouseout: function(e) {
                     this.closePopup();
-                },
-                // click: function(e){
-                //     $("#sidebar").html(e.popupContent();
-                // }
+                }                
             });
 
 
             return L.popupContent()
         }
     }).addTo(map);
+
+    $('.menu-ui a').on('click', function() {
+        // For each filter link, get the 'data-filter' attribute value.
+        var filter = $(this).data('filter');
+        // console.log(filter);
+        attType=filter;
+        updatePropSymbols(attType, years[0]);
+    });
 
      updatePropSymbols(attType, years[0]);
 };
@@ -377,10 +389,10 @@ function rankedList(data, attribute){
         return {name: el.properties.country_name, value: el.properties[attribute]};
     });
 
-    var list =getTopN(expected_result,'value',40);
-    //console.log(list);
+    var list =getTopN(expected_result,'value',216);
+    // console.log(list);
 
-    const filtered = list.filter(value => value.value >0);
+    const filtered = list.filter(value => value.value >= 1);
     // console.log(filtered);
 
     list =getTopN(filtered,'value',10);
@@ -396,7 +408,7 @@ var info
 var mydata
 
 // start var for type
-var attType = 'pcghg';
+var attType = 'pop';
 
 
 $(document).ready(
