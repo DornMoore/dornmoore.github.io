@@ -1,3 +1,7 @@
+--Query used to create the GEOJSON file used in this project
+--	Data was imported to a Postgresql Database and combuned into this query 
+--	Query created by Dorn Moore September 2018 for GEOG 575 Lab1
+
 SELECT
 	row_to_json ( fc ) 
 FROM
