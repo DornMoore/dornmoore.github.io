@@ -25,6 +25,8 @@ var svg = d3.select("body")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
+
 // add the tooltip area to the webpage
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -32,19 +34,19 @@ var tooltip = d3.select("body").append("div")
 
 // load data
 d3.queue()
-  .defer(d3.csv, "data/cbc_gmc_by_year.csv")
+  .defer(d3.csv, "data/cbc_gmc_by_year_wStdev.csv")
   .defer(d3.csv, "data/qry_cbc_count_by_year.csv")
 
   .await(callback);
 
 function callback(error, gmc_data, sacr_cir) {
     if(error) throw error;
-    // console.log(gmc_data);
     
 
     // don't want dots overlapping axis, so add in buffer to data domain
     xScale.domain([d3.min(gmc_data, xValue)-1, d3.max(gmc_data, xValue)+1]);
     yScale.domain([d3.min(sacr_cir, yValue)-1, d3.max(sacr_cir, yValue)+1]);
+
     // console.log(d3.min(gmc_data[count_yr]));
 
     // x-axis
@@ -71,9 +73,17 @@ function callback(error, gmc_data, sacr_cir) {
         .style("text-anchor", "end")
         .text("Latitude");
 
+    // Create the line for the gmc
     var line = d3.line()
         .x(function(d) {return xScale(d.count_yr);})
         .y(function(d) {return yScale(d.lat);})
+        .curve(d3.curveMonotoneX);
+
+    // Create the area for the standard deviations
+    var area = d3.area()
+        .x(function(d) { return xScale(d.count_yr); })
+        .y0(function(d) { return yScale(parseFloat(d.lat) - 1*parseFloat(d.wstdev_lat)); })
+        .y1(function(d) { return yScale(parseFloat(d.lat) + 1*parseFloat(d.wstdev_lat)); })
         .curve(d3.curveMonotoneX);
 
     
@@ -107,6 +117,15 @@ function callback(error, gmc_data, sacr_cir) {
                  .style("opacity", 0);
         });
 
+    // Draw the stdev area showing the change in GMC each year.
+    svg.append("path")
+      .datum(gmc_data)
+      .attr("class", "stDev")
+      .attr("d", area)
+      .style("fill", "#4682B4")
+      .style("stroke", "none")
+      .style("opacity","0.33");
+
     // Draw the line showing the change in GMC each year.
     svg.append("path")
       .datum(gmc_data)
@@ -129,25 +148,25 @@ function callback(error, gmc_data, sacr_cir) {
         // .style("fill", function(d) { return color(cValue(d));}) 
         .style("fill", "#ffab00");        ;
 
-    // // draw legend
-    // var legend = svg.selectAll(".legend")
-    //     .gmc_data(color.domain())
-    //   .enter().append("g")
-    //     .attr("class", "legend")
-    //     .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+    // draw legend
+    var legend = svg.selectAll(".legend")
+        // .gmc_data(color.domain())
+      .enter().append("g")
+        .attr("class", "legend")
+        .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-    // // draw legend colored rectangles
-    // legend.append("rect")
-    //     .attr("x", w - 18)
-    //     .attr("width", 18)
-    //     .attr("height", 18)
-    //     .style("fill", color);
+    // draw legend colored rectangles
+    legend.append("rect")
+        .attr("x", w - 18)
+        .attr("width", 18)
+        .attr("height", 18)
+        .style("fill", "grey");
 
-    // // draw legend text
-    // legend.append("text")
-    //     .attr("x", w - 24)
-    //     .attr("y", 9)
-    //     .attr("dy", ".35em")
-    //     .style("text-anchor", "end")
-    //     .text(function(d) { return d;})
+    // draw legend text
+    legend.append("text")
+        .attr("x", w - 24)
+        .attr("y", 9)
+        .attr("dy", ".35em")
+        .style("text-anchor", "end")
+        .text(function(d) { return d;})
 };
