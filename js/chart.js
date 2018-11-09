@@ -87,6 +87,16 @@ function callback(error, gmc_data, sacr_cir) {
         .curve(d3.curveMonotoneX);
 
     
+    // Draw the stdev area showing the change in GMC each year.
+    svg.append("path")
+      .datum(gmc_data)
+      .attr("class", "stDev")
+      .attr("d", area)
+      .style("fill", "#4682B4")
+      .style("stroke", "none")
+      .style("opacity","0.33");
+
+
     // draw dots for 
     svg.selectAll(".cirdot")
         .data(sacr_cir)
@@ -117,14 +127,7 @@ function callback(error, gmc_data, sacr_cir) {
                  .style("opacity", 0);
         });
 
-    // Draw the stdev area showing the change in GMC each year.
-    svg.append("path")
-      .datum(gmc_data)
-      .attr("class", "stDev")
-      .attr("d", area)
-      .style("fill", "#4682B4")
-      .style("stroke", "none")
-      .style("opacity","0.33");
+    
 
     // Draw the line showing the change in GMC each year.
     svg.append("path")
