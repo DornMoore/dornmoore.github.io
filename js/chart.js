@@ -110,9 +110,9 @@ function callback(error, gmc_data, sacr_cir) {
         .attr("cx", xMap)
         .attr("cy", yMap)
         // .style("fill", function(d) { return color(cValue(d));}) 
-        .style("fill", "#D3D3D3")
-        .style("stroke", "white")
-        .style("stroke-width", "0.75")
+        .style("fill", "#C0C0C0")
+        .style("stroke", "#F5F5F5")
+        .style("stroke-width", "0.25")
         .on("mouseover", function(d) {
             tooltip.transition()
                  .duration(200)
