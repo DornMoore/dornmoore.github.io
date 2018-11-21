@@ -2,7 +2,7 @@
 (function(){
 
   // define variable for updating from csv file
-  var attrArray = ["ta_sa2_All", "ta_sa2_Cul"];
+  var attrArray = ["Wetlands", "Open Water", "Cultivated"];
   // set the variable the map is focused on
   var focus = attrArray[1];
 
@@ -72,7 +72,6 @@
     d3.queue()
           // .defer(d3.json, "data/us-states.json")
           .defer(d3.json, "data/hexTiles.topojson")
-          .defer(d3.csv, "data/sa2_hex_data.csv")
           .defer(d3.csv,"data/sa2_hex_data.csv", function(d, i, columns) {
             for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
             return d;
@@ -80,11 +79,12 @@
 
           .await(callback);
 
-    function callback(error, hex, csvData, chartData){
+    function callback(error, hex, chartData){
       if(error) throw error;
       // console.log(ddata);
 
       habs = (chartData.columns.slice(1));
+
       sourceData=chartData;
 
       setGraticule(map, path);
@@ -101,10 +101,10 @@
           .attr("d", path);
 
       //loop through csv to assign each set of csv attribute values to geojson region
-      var hexData = joinData(hexs, csvData);
-      console.log(hexData);
+      var hexData = joinData(hexs, chartData);
+      // console.log(hexData);
 
-      var colorScale = makeQuantileScale(csvData);
+      var colorScale = makeQuantileScale(chartData);
 
       setEnumerationUnits(hexData,map, path, colorScale);
 
@@ -147,7 +147,7 @@
 
         var geojsonProps = layer[a].properties; //the current region geojson properties
         var geojsonKey = geojsonProps.ta_sa2_GRI; //the geojson primary key
-        
+
         //where primary keys match, transfer csv data to geojson properties object
         if (geojsonKey == csvKey){
 
@@ -203,8 +203,10 @@
         .attr("d", path)
         .style("fill", function(d){
             // return choropleth(d.properties, colorScale);
-            var r= parseFloat(d.properties.Wetlands )* 255;
-            console.log(r)
+            var wet = d.properties.Wetlands * 255;
+            var water = d.properties['Open Water'] * 255;
+            var cult = d.properties.Cultivated*255;
+            return "rgb("+cult+","+wet+","+water+")";
         })
         .on('click', function(d,i){
           d3.select('.bars')
@@ -213,12 +215,15 @@
         .on("mouseout", function(d){
             d3.select(this)
               .style("fill", function(d){
-                return choropleth(d.properties, colorScale);
+               var wet = d.properties.Wetlands * 255;
+                var water = d.properties['Open Water'] * 255;
+                var cult = d.properties.Cultivated*255;
+                return "rgb("+cult+","+wet+","+water+")";
               })
         })
         .on("mouseover", function(d,i){
           d3.select(this)
-            .style("fill", "#d7191c");
+            .style("fill", "yellow");
           //set the id for use next 
           id = d.properties.ta_sa2_GRI;
           // Update teh chart based on the mouseover
@@ -318,7 +323,7 @@ function setChartArea(data, keys){
 
     var z = d3.scaleOrdinal()
         // .range(["#d0743c", "#ff8c00"])
-        .range(['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a'])
+        .range(['rgba(125,125,125,1)','rgba(125,125,125,0.5)','#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a'])
         ;
 
     var legend = g.append("g")
@@ -332,11 +337,11 @@ function setChartArea(data, keys){
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")
-      .attr("class", "item")
+      .attr("class", function(d){return d})
       .attr("x", width - 19)
       .attr("width", 19)
-      .attr("height", 19)
-      .attr("fill", z);
+      .attr("height", 19);
+      // .attr("fill", z);
 
   legend.append("text")
       .attr("class", "text")
@@ -389,35 +394,35 @@ function update(data,keys){
       .rangeRound([height, 0]);
 
   var z = d3.scaleOrdinal()
-      // .range(["#d0743c", "#ff8c00"])
-      .range(['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a'])
-      ;
+        // .range(["#d0743c", "#ff8c00"])
+        .range(['rgba(125,125,125,1)','rgba(125,125,125,0.5)','#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a'])
+        ;
 
   // console.log(data[0][keys[0]]);
   x0.domain(data.map(function(d) { return d.Habitat; }));
   x1.domain(keys).rangeRound([0, x0.bandwidth()]);
   y.domain([0,1]);
 
+  // Clear out any existing bars.
   var bars = g.selectAll(".bar")
       .remove()
       .exit();
-      // .data(data);
-      // .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); });
-
+     
   g.append("g")
     .selectAll("g")
     .data(data)
     .enter().append("g")
       .attr("transform", function(d) { return "translate(" + x0(d.Habitat) + ",0)"; })
+      .attr("class",function(d) { return d.Habitat; })
     .selectAll("rect")
     .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
     .enter().append("rect")
-      .attr("class","bar")
+      .attr("class",function(d) { return "bar "+ d.key})
       .attr("x", function(d) { return x1(d.key); })
       .attr("y", function(d) { return y(d.value); })
       .attr("width", x1.bandwidth())
-      .attr("height", function(d) { return height - y(d.value); })
-      .attr("fill", function(d) { return z(d.key); });
+      .attr("height", function(d) { return height - y(d.value); });
+      // .attr("fill", function(d) { return z(d.key); });
   
   g.selectAll(".axis").remove().exit();
 

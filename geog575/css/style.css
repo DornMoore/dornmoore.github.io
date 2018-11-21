@@ -59,3 +59,21 @@ body {
     width: 90%;
     margin: auto;
 }
+
+rect.bar.Regional.Average {
+    opacity: 0.5;
+}
+
+rect.Regional.Average {
+    opacity: 0.5;
+}
+
+g.Wetlands {
+    fill: rgba(0,125,0,1)
+}
+g.Open.Water {
+    fill: rgba(0,0,150,1)
+}
+g.Cultivated {
+    fill: rgba(200,0,0,1)
+}
