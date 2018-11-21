@@ -1,0 +1,61 @@
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    /*font-size: 0.9em;*/
+}
+.title {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.gratLines {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+}
+.map {
+    border: medium solid #999;
+    margin: 10px 0 0 20px;
+    float: left;
+
+}
+
+.chart {
+    background-color: #fff;
+    border: none;
+    float: right;
+    /*padding: 20px 20px 20px 20px;*/
+    /*margin: 20px 20px 0 0;*/
+}
+
+.gratBackground {
+    fill: #fff;
+}
+.states {
+    fill: #FFF;
+    stroke: #CCC;
+    stroke-width: 2px;
+}
+.counties {
+	fill: #ccc;
+	stroke: #999;
+	stroke-width: 1px;
+}
+
+.chartTitle {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+body {
+    width: 90%;
+    margin: auto;
+}
