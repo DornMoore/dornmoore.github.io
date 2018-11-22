@@ -37,98 +37,94 @@
     // define variable for updating from csv file
     var attrArray = ["Wetlands", "Open Water", "Cultivated"];
     // set the variable the map is focused on
-    var focus = attrArray[1];
+    // var focus = attrArray[1];
 
-    // serupt default id
+    // setup default id
     var id = 'AE-56';
 
-    var sourceData = [];
-    var habs = [];
-    var keys = [];
+    var sourceData = []; //used to store unfiltered but processed data
+    var habs = []; //Will stor habitat classes from the data
+    var keys = []; // Will store the key values (Regional Average and Selected Hex)
 
-    //Set variables for use inthe chart inside the svg
+    //Set variables for use in the chart inside the svg
     var margin = { top: 20, right: 20, bottom: 30, left: 40 };
-    //Width and height
-    var w = 500;
-    var h = 500;
-    var width = ((window.innerWidth * 0.8 - w) - margin.left - margin.right);
-    var height = h - margin.top - margin.bottom;
+    var w = 500; // Base Width
+    var h = 500; //Base Height
+    var width = ((window.innerWidth * 0.8 - w) - margin.left - margin.right); //Chart Width
+    var height = h - margin.top - margin.bottom; //Chart Height
 
-    //Create SVG element
-    var map = d3.select(".map")
+    //Create SVG elements
+    var map = d3.select(".map") //MAP
         .append("svg")
         // .attr("class", "map")
         .attr("width", w)
         .attr("height", h);
 
-    var chart = d3.select(".chart")
+    var chart = d3.select(".chart") //CHART
         .append("svg")
         // .attr("class","chart")
         .attr("width", width + margin.left + margin.right)
         .attr("height", h);
-    // .attr("width", chartWidth - margin.left - margin.right )
-    // .attr("height", h  - margin.top - margin.bottom);
 
+    // Create chart group g
     var g = chart.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")").attr("class", "group");
 
+    // Onload, get things started
     window.onload = setMap();
 
     function setMap() {
-        // var margin = {top: 20, right: 20, bottom: 30, left: 40}
+      // Define the projection variables. Placing them here for easy changing later
+      var projection = d3.geoAlbers()
+          .rotate([89, 0])
+          .center([0, 43])
+          .parallels([40, 50])
+          .scale(2000)
+          .translate([w / 2, h / 2])
+          .precision(0.1);
+      //Define path generator, using the Albers USA projection
+      var path = d3.geoPath()
+          .projection(projection);
 
-        // Define the projection variables. Placing them here for easy changing later
-        var projection = d3.geoAlbers()
-            .rotate([89, 0])
-            .center([0, 43])
-            .parallels([40, 50])
-            .scale(2000)
-            .translate([w / 2, h / 2])
-            .precision(0.1);
-        //Define path generator, using the Albers USA projection
-        var path = d3.geoPath()
-            .projection(projection);
+      d3.queue()
+          // .defer(d3.json, "data/us-states.json")
+          .defer(d3.json, "data/hexTiles.topojson")
+          .defer(d3.csv, "data/sa2_hex_data.csv", function(d, i, columns) {
+              for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
+              return d;
+          })
 
-        d3.queue()
-            // .defer(d3.json, "data/us-states.json")
-            .defer(d3.json, "data/hexTiles.topojson")
-            .defer(d3.csv, "data/sa2_hex_data.csv", function(d, i, columns) {
-                for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
-                return d;
-            })
+          .await(callback);
 
-            .await(callback);
+      function callback(error, hex, chartData) {
+          if (error) throw error;
 
-        function callback(error, hex, chartData) {
-            if (error) throw error;
-            // console.log(ddata);
+          // Populate the hab variable from habitat types
+          habs = (chartData.columns.slice(1));
 
-            habs = (chartData.columns.slice(1));
+          // populate the sourceData for future filters
+          sourceData = chartData;
 
-            sourceData = chartData;
+          // Add the Graticule to the map
+          setGraticule(map, path);
 
-            setGraticule(map, path);
+          var hexs = topojson.feature(hex, hex.objects.hexTiles).features;
 
-            var hexs = topojson.feature(hex, hex.objects.hexTiles).features;
+          var cells = map.selectAll(".sa2_hex_data")
+              .data(hexs)
+              .enter()
+              .append("path")
+              .attr("class", function(d) {
+                  return "sa2_hex_data " + d.properties.ta_sa2_GRI;
+              })
+              .attr("d", path);
 
-            var cells = map.selectAll(".sa2_hex_data")
-                .data(hexs)
-                .enter()
-                .append("path")
-                .attr("class", function(d) {
-                    return "sa2_hex_data " + d.properties.ta_sa2_GRI;
-                })
-                .attr("d", path);
+          //loop through csv to assign each set of csv attribute values to geojson region
+          var hexData = joinData(hexs, chartData);
 
-            //loop through csv to assign each set of csv attribute values to geojson region
-            var hexData = joinData(hexs, chartData);
-            // console.log(hexData);
+          setEnumerationUnits(hexData, map, path);
 
-            var colorScale = makeQuantileScale(chartData);
-
-            setEnumerationUnits(hexData, map, path, colorScale);
-
-            setChartArea(processData(chartData, id), keys);
-        }; //end callback
+          setChartArea(processData(chartData, id), keys);
+      }; //end callback
     }; //end setMap()
 
 
@@ -180,33 +176,7 @@
         return layer;
     };
 
-
-    function makeEqualIntervalScale(data) {
-        var colorClasses = [
-            "#eff3ff",
-            "#bdd7e7",
-            "#6baed6",
-            "#3182bd",
-            "#08519c"
-        ];
-
-        //create color scale generator
-        var colorScale = d3.scaleQuantile()
-            .range(colorClasses);
-
-        //build two-value array of minimum and maximum expressed attribute values
-        var minmax = [
-            d3.min(data, function(d) { return parseFloat(d[focus]); }),
-            d3.max(data, function(d) { return parseFloat(d[focus]); })
-        ];
-        //assign two-value array as scale domain
-        colorScale.domain(minmax);
-
-        return colorScale;
-    };
-
-
-    function setEnumerationUnits(hexs, map, path, colorScale) {
+    function setEnumerationUnits(hexs, map, path) {
         //add hex to map
         var regions = map.selectAll(".regions")
             .data(hexs)
@@ -246,83 +216,6 @@
                 update(processData(sourceData, id), keys);
             });
     };
-
-    function makeNBScale(data) { //Natural Breaks Scale
-        var colorClasses = [
-            "#eff3ff",
-            "#bdd7e7",
-            "#6baed6",
-            "#3182bd",
-            "#08519c"
-        ];
-
-        //create color scale generator
-        var colorScale = d3.scaleThreshold()
-            .range(colorClasses);
-
-        //build array of all values of the expressed attribute
-        var domainArray = [];
-        for (var i = 0; i < data.length; i++) {
-            var val = parseFloat(data[i][focus]);
-            domainArray.push(val);
-        };
-
-        //cluster data using ckmeans clustering algorithm to create natural breaks
-        var clusters = ss.ckmeans(domainArray, 5);
-        //reset domain array to cluster minimums
-        domainArray = clusters.map(function(d) {
-            return d3.min(d);
-        });
-        //remove first value from domain array to create class breakpoints
-        domainArray.shift();
-
-        //assign array of last 4 cluster minimums as domain
-        colorScale.domain(domainArray);
-
-        return colorScale;
-    };
-
-
-    function makeQuantileScale(data) {
-        var colorClasses = [
-            "#eff3ff",
-            "#bdd7e7",
-            "#6baed6",
-            "#3182bd",
-            "#08519c"
-        ];
-
-        //create color scale generator
-        var colorScale = d3.scaleQuantile()
-            .range(colorClasses);
-
-        //build array of all values of the expressed attribute
-        var domainArray = [];
-        for (var i = 0; i < data.length; i++) {
-            var val = parseFloat(data[i][focus]);
-            domainArray.push(val);
-        };
-
-        //assign array of expressed values as scale domain
-        colorScale.domain(domainArray);
-
-        return colorScale;
-    };
-
-
-
-    function choropleth(props, colorScale) {
-        //make sure attribute value is a number
-        var val = parseFloat(props[focus]);
-        //if attribute value exists, assign a color; otherwise assign gray
-        if (typeof val == 'number' && !isNaN(val)) {
-            return colorScale(val);
-        } else {
-            return "#FFF";
-        };
-    };
-
-
 
     function setChartArea(data, keys) {
 
