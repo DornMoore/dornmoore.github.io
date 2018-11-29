@@ -1,0 +1,677 @@
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    28.2280951515721,
+                    -81.6857886889302
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1965,
+                "sum_sacr": 423
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.4723433169573,
+                    -81.7018134118902
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1966,
+                "sum_sacr": 537
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    27.2631354374929,
+                    -81.3320576435811
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1967,
+                "sum_sacr": 222
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.0593555619982,
+                    -81.8012096828885
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1968,
+                "sum_sacr": 225
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.9870917661886,
+                    -81.9476521387799
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1969,
+                "sum_sacr": 723
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.0458424932524,
+                    -82.1027553534458
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1970,
+                "sum_sacr": 958
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.1458298530219,
+                    -82.0571302647861
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1971,
+                "sum_sacr": 848
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.2527575999733,
+                    -82.1956615898553
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1972,
+                "sum_sacr": 1016
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.3886820037322,
+                    -82.3006089518097
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1973,
+                "sum_sacr": 1234
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.9384305223765,
+                    -81.824175044608
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1974,
+                "sum_sacr": 781
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.9912790099643,
+                    -81.7951474359082
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1975,
+                "sum_sacr": 873
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.1310876169512,
+                    -81.9891083677793
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1976,
+                "sum_sacr": 1085
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.6957075043805,
+                    -82.0722725446834
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1977,
+                "sum_sacr": 989
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.6891448127413,
+                    -81.8254364624764
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1978,
+                "sum_sacr": 824
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.8252420715761,
+                    -81.6549938359733
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1979,
+                "sum_sacr": 1281
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.8181944063197,
+                    -81.8291394618169
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1980,
+                "sum_sacr": 955
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.2391397109321,
+                    -82.2447924071747
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1981,
+                "sum_sacr": 1882
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.5400222147451,
+                    -81.8267946375946
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1982,
+                "sum_sacr": 1294
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.5757219990182,
+                    -82.1693669787366
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1983,
+                "sum_sacr": 2267
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.3032659746182,
+                    -82.2408309481037
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1984,
+                "sum_sacr": 2345
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.0193605842261,
+                    -82.1755292991112
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1985,
+                "sum_sacr": 2320
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.3859433132293,
+                    -82.2297499219516
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1986,
+                "sum_sacr": 2644
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.2829617027523,
+                    -82.112127738216
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1987,
+                "sum_sacr": 3998
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    28.9947387645935,
+                    -82.0951659629561
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1988,
+                "sum_sacr": 3013
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.3538026372439,
+                    -82.2565663768604
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1989,
+                "sum_sacr": 4951
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.7781376306369,
+                    -82.4014915739429
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1990,
+                "sum_sacr": 4246
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    30.4543875976498,
+                    -82.614579323098
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1991,
+                "sum_sacr": 8948
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.7088727591104,
+                    -82.3462958258918
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1992,
+                "sum_sacr": 7869
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    29.7549676138158,
+                    -82.4719617885069
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1993,
+                "sum_sacr": 9159
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.6630346535836,
+                    -83.6481334148437
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1994,
+                "sum_sacr": 10724
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.2083608706256,
+                    -83.4999697538545
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1995,
+                "sum_sacr": 9641
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    31.4806237902158,
+                    -83.1738234156065
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1996,
+                "sum_sacr": 13793
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.3162456188656,
+                    -83.4771185011603
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1997,
+                "sum_sacr": 13407
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    36.5261206127385,
+                    -85.2686503586015
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1998,
+                "sum_sacr": 19961
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    34.3474059433231,
+                    -84.5967157373026
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 1999,
+                "sum_sacr": 22759
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    31.523491512373,
+                    -83.3073082172172
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2000,
+                "sum_sacr": 23233
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    34.5284067031449,
+                    -84.2399817401501
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2001,
+                "sum_sacr": 21490
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.8894297089113,
+                    -84.0551760338541
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2002,
+                "sum_sacr": 24404
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    34.1951990788401,
+                    -84.4936556345062
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2003,
+                "sum_sacr": 37911
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    33.4496490565219,
+                    -83.9911155710095
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2004,
+                "sum_sacr": 32426
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    33.3609246900885,
+                    -84.39568234815
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2005,
+                "sum_sacr": 34260
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.818272438741,
+                    -83.7424678506375
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2006,
+                "sum_sacr": 26087
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.909747932015,
+                    -83.7665569074614
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2007,
+                "sum_sacr": 27998
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.3755724289565,
+                    -84.0197082381102
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2008,
+                "sum_sacr": 32848
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    33.3349838596994,
+                    -84.0997327734565
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2009,
+                "sum_sacr": 38746
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    32.4740843168447,
+                    -84.0015327309776
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2010,
+                "sum_sacr": 40683
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    35.7213976286735,
+                    -85.1307951097155
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2011,
+                "sum_sacr": 55827
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    35.448119814243,
+                    -85.372156079189
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "count_yr": 2012,
+                "sum_sacr": 46194
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
