@@ -5,38 +5,39 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<title>Saving Cranes</title>
 	<meta name="description" content="Interactive Visualization of Sandhill Crane distribution changes using Christmas Bird count data.">
-	
+
 	<link rel="shortcut icon" href="img/favicon_icf.jpg">
-	
+
 	<!-- CSS stylesheets and scripts -->
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 	<!-- <link rel="stylesheet" href="css/slimmenu.css"> -->
 	<!-- <link rel="stylesheet" href="css/special.css"> -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-	
+
 	<!-- <script src="/lib/leaflet.ajax.min.js"></script> -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/charts.css">
+	<!-- <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/charts.css"> -->
 
-	<link rel="stylesheet" href="/css/mapStyle.css">
-	<link rel="stylesheet" href="/lib/leaflet.css"/>
+	<link rel="stylesheet" href="css/mapStyle.css">
+	<link rel="stylesheet" href="lib/leaflet.css"/>
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
-	<link rel="stylesheet" href="/lib/leaflet.fullscreen.css" />
+	<link rel="stylesheet" href="lib/leaflet.fullscreen.css" />
 	<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> <!-- JQuery ui declaration--->
-	<!-- <script src="lib/leaflet.js"></script> -->
-	<!-- <script src="lib/leaflet.fullscreen.js"></script> -->
+	<script src="lib/leaflet.js"></script>
+	<script src="lib/leaflet.fullscreen.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script><!-- Jquery mobile/touch  declaration--->
-	 <!-- <script src="lib/SliderControl.js" type="text/javascript"></script> -->
-	 <!-- slider js declaration- -->
-	<!-- <script src="lib/leaflet.ajax.min.js"></script> -->
-	
+	<script src="lib/SliderControl.js" type="text/javascript"></script><!-- slider js declaration--->
+	<script src="lib/leaflet.ajax.min.js"></script>
+
+	<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -51,7 +52,7 @@
 				<div class="col-lg-3 col-md-3 col-sm-9 col-xs-8 pr">
 					<h1 class="logo-text">International Crane Foundation</h1>
 				</div>
-				
+
 				<div class="col-lg-7 col-md-7 col-sm-9 navbar navbar-default main-menu">
 					<nav class="navbar-collapse">
 						<ul id="top-navigation" class="nav navbar-nav slimmenu">
@@ -96,36 +97,74 @@
 			</div>
 		</div>
 	</header>
-	
+
 	<div class="container">
 		<div class="clearfix site-content">
-			<div class="title-wrap">
-					Changes in the number and distribution of Sandhill cranes in the eastern Population over nearly 60 years.
-				</div>
 			<div id="content">
-				
-				<p>In 2015, researchers at the International Crane Foundation published a paper in the Journal of Field Ornithology examining the changes in the number and distribution of Sandhill cranes in the Eastern Population. The Eastern Population of Sandhill Cranes in the United Sates are located in the Mississippi and Atlantic flyways and are roughly bounded by the Mississippi river on the west and the Atlantic ocean in the east. The research paper used data from annual bird surveys to help grasp the substantial changes in the number of Sandhill cranes in the population from 1965 through 2012.  </p>
-				<p>One of the sources of data for this paper was the Christmas Bird Count coordinated annually by the National Audubon Society. These data, collected annually by local volunteer birders provide a wealth of data to researchers. In addition to helping show the substantial recovery of a, once, seldom seen species, the data also shows changes in the wintering locations of these birds as population density, habitat, and climate changes over time. </p>
-			</div>
-			<div class="chart_title">
-				<center><h3>Population Trend for Sandhill Cranes in the Eastern Population (1965-2013)</h3></center>
-			</div>
-			<div id="pop_chart_pane" >
-				<p>Bar Graph goes here</p>
-			</div>
-			<div class="chart_description">
-				Trends in the changing population of Sandhill cranes is reflected in the number of cranes counted each year in the Christmas Bird Count. Although these numbers are not a population estimate, they do reflect the trend over time. - Data from National Audubon Society Christmas Bird Count.<br> <br>
-			</div>
-			<div id="map_pane" >
-					<p>Map goes here</p>
-			</div>
-			<div class="chart_title">
-				<center><h3>Average Latitude of Sandhill Cranes Recorded in Christmas Bird Count (1965 - 2013)</h3></center>
-			</div>
-			<div id="lat_chart_pane" >
-			</div>
-			<div class="chart_description">
-				The changes in the avereage latitude for Sandhills in late December and early January reflects changes in the species population, changing habitat and food sources, and a change in the climate during the same period. The northern trend of the avereage latitude (orange line) over time is accompanied by en envelope (blue area) showing the core of the population's spread across different latitudes.  <br> <br>
+				<div class="col-lg-12 col-md-12 col-sm-12" id="article-title"><h2>Exploring Changes in Distribution and Count of Sandhill Cranes in the Eastern Population over 50 years</h2><em><strong>Data visualization: </strong>Dorn Moore, Jim Cunningham, & Randy Garcia</em><br><em><strong>Research Team: </strong>Anne Lacy, Jeb Barzen, Dorn Moore, Kristin Norris</em><br><br></div>
+				<div class="col-lg-6 col-md-7 col-sm-12">
+
+					<p>In 2015, researchers at the International Crane Foundation published a paper in the Journal of Field Ornithology examining the changes in the number and distribution of Sandhill cranes in the Eastern Population (<a href="background/JFODistributionSACR - 2015 Article.pdf" target="blank">download the original article</a>). The Eastern Population of Sandhill Cranes in the United States are located in the Mississippi and Atlantic flyways grew dramatically between 1965 and 2013. The research team used data from annual bird surveys to help grasp the substantial changes in the number of Sandhill cranes in the population from 1965 through 2013.</p>
+
+					<p>For winter analysis, the project team used data from the <a href="https://www.audubon.org/conservation/science/christmas-bird-count" target="blank">National Audubon Society’s Christmas Bird Count</a>. Volunteer, citizen scientists, count birds as part of Christmas Bird Count (CBC) between December 14th and January 5th each year. These data are used by researchers to help understand changes in bird populations. Our analysis of CBC data revealed both major increases in the number of Sandhills in the Eastern Population but also significant changes in the timining and distribution of Sandhills dureing their winter migration.</p>
+				</div>
+
+				<div class="chart col-lg-6 col-md-5 col-sm-12">
+					<div class="chart_title">
+						Population Trend for Sandhill Cranes in the Eastern Population (1965-2013)
+					</div>
+					<div id="pop_chart_pane" >
+						<p>Bar Graph goes here</p>
+					</div>
+					<div class="chart_description">
+						The number of Sandhills counted in each year's Christmas Bird Count is an indicator of the overall increase in the Eastern Population. - Data from <a href="http://netapp.audubon.org/cbcobservation/" target="blank">National Audubon Society Christmas Bird Count</a>.
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<p>The majority of Sandhill cranes withing the Eastern Population spend their summer/breeding months in or north of Michigan, Wisconsin, and Minnesota. The data visualization below helps explore both the changes in numbers of cranes from 1965-2013 but also the changes in the distribution of the cranes during the Christmas Bird Count. It is easy to see the northward shift in the distribution of Sandhills and also how they spread to areas along the Gulf Coast and the Eastern seaboard.</p>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div id="map_pane" class="outline">
+							<div id="map" style="width: 60%; height: 600px; padding: 0%"></div>
+							<div class="info-box">
+								<div class="info-box-items">
+									<div class="slidecontainer">
+											<input type="range" min="1965" max="2012" step = "1" value="2012" class="slider" id="myRange">
+										  </div>
+								<div class="buttons" >
+										<input type="button" class="btn btn-primary btn-sm" value="&#8249;" onclick="buttonBack()">
+										<input type="button" class="btn btn-primary btn-sm" value="&#8250;" onclick="buttonForward()">
+								</div>
+
+							<div class="text info" style="max-height:83%;overflow:auto; padding-top: 30px;">
+									<center><p id="userYear"></p></center>
+								<center><p id="dataText"> Use the slider above to change the data shown in the map</p></center></div>
+								<div id= "mapButton" class="mapButton">
+										<a  data-toggle="tooltip" title="Show Christmas Bird Count locations that didn’t see Sandhill cranes">
+									<button class="buttonOut" onclick="togglePoints();">Show all CBC circles</button>
+										</a>
+								</div>
+								<div class="toggleDiv"><label class="switch">
+									<text class = "toggleText"><center><p>autoplay data?</p></center></text>
+									<input type="checkbox">
+									<div class="sliderToggle"></div>
+								  </label> </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					Although these data do not necessarily reflect the ultimate wintering area for Sandhills in the region, they do reflect changes in the areas that will still support cranes as winter arrives. Sahdhills are hardy birds, many of them will wait to migrate until open water for roosting and drinking has frozen over completely. Sandhills are able to postpone their migration until later than the Christmas Bird Count each year. The research team documented a significant northern shift in the average latitude of the Eastern Population at the Christmas Bird Count each year. The chart below shows the northward shift and the broadening range of latitudes where Sandhills are staging or wintering each year.
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="chart_title">Average Latitude of Sandhill Cranes Recorded in Christmas Bird Count (1965 - 2013)
+					</div>
+					<div id="lat_chart_pane" >
+					</div>
+					<div class="chart_description">
+						The changes in the avereage latitude for Sandhills in late December and early January reflects changes in the species population, changing habitat and food sources, and a change in the climate during the same period. The northern trend of the avereage latittude (orange line) over time is accompanied by en envelope (blue area) showing the core of the population's spread across different latitudes.
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -137,20 +176,18 @@
 				<ul class="list-common clearfix clsSepview">
 					<li> <a href="https://www.savingcranes.org/site-map/"> Site Map </a> </li>
 					<li> <a href="https://www.savingcranes.org/wp-content/uploads/2018/04/ICF_internet_privacy_policy_4-25-18.pdf" target="_blank"> Privacy Policy </a></li>
-					
+
 				</ul>
 			</div>
 		</div>
 	</footer>
-	
-	<!-- <script src="lib/d3.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
-	<!-- <script src="lib/d3-request.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-request/1.0.6/d3-request.min.js"></script>
-	<!-- <script src="lib/d3-queue.min.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.7/d3-queue.min.js"></script>
+
+	<script src="lib/d3.min.js"></script>
+	<script src="lib/d3-request.min.js"></script>
+	<script src="lib/d3-queue.min.js"></script>
 
 	<script src = "js/charts.js"></script>
+	<script src = "js/map.js"></script>
 	<!-- <script src = "js/pop_chart.js"></script> -->
 	<!-- <script type="text/javascript">
 		window.onresize = function(){

@@ -1,0 +1,254 @@
+<!-- added by Randy -->
+
+.map{
+  width: 60%;
+  height: 600px;
+  padding: 0%;
+  }
+
+.info-box {
+  background: #596164;
+  padding-bottom: 10px;
+  display: inline-block;
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  right: 0;
+  height: 600px;
+  width: 40%;
+  color: #EDEFF2;
+}
+.leaflet-control-layers-toggle {
+    /* background-image: url(/img/mapLayerControl.png) !important; */
+    background-color: #337ab7 ;
+    background-size: 20px 20px;
+    
+  }
+  
+.leaflet-touch .leaflet-control-layers-toggle {
+    /* background-image: url(/img/mapLayerControl.png) !important; */
+    background-color: #337ab7 ;
+  }
+  
+.leaflet-control-layers-expanded {
+    color: #333;
+    font-weight: normal;
+    background-color: #EDEFF2;
+  }
+ 
+
+.buttons{
+  text-align: center;
+  padding-top: 20px;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.outline{
+  border: none;
+}
+
+.slidecontainer {
+  padding-top: 0px;
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #337ab7;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: white;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+/* .slidecontainer {
+  padding-top: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #337ab7;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 10px;
+  border-radius: 50%;
+  background: #337ab7;
+  cursor: pointer;
+} */
+
+.mapButton {
+  position: relative; 
+  z-index: 9999;
+  text-align: center;
+  padding: 1%;
+  
+}
+
+.buttonOut {
+  background-color: #596164; /* Green */
+  border: 2px solid #337ab7;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.buttonOut:hover {
+  background-color: #337ab7; /* Green */
+  color: white;
+}
+
+.button {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+
+  // play state
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+
+  &.paused {
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+  }
+
+  &:hover {
+    border-color: transparent transparent transparent #404040;
+  }
+}
+
+.toggleDiv{
+  text-align: center;
+  padding-top: 25px;
+
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 22px;
+}
+
+.switch input {display:none;}
+
+.sliderToggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sliderToggle:before {
+  position: absolute;
+  border-radius: 20px;
+  content: "";
+  height: 14px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .sliderToggle {
+  background-color: #337ab7;
+}
+
+input:focus + .sliderToggle {
+  box-shadow: 0 0 1px #337ab7;
+}
+
+input:checked + .sliderToggle:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.toggleText {
+  color: black;
+}
+
+.info-box-items {
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-box {
+      background-color: #596164;
+      position: relative;
+      width: 100%;
+      height: 10%;
+  }
+  .map{
+    width: 900px;
+    height: 600px;
+    }
+}
+
+inline

@@ -9,6 +9,11 @@ var pop_graphic_aspect_width = 9;
 var pop_graphic_aspect_height = 4;
 
 
+function updateCharts(value) {
+    drawPopChart();
+}
+
+
 
 function drawLatChart() {
 
@@ -165,17 +170,18 @@ function drawLatChart() {
                 .on("mouseover", function(d) {
                     tooltip.transition()
                         .duration(200)
-                        .style("opacity", 0.7);
+                        .style("opacity", 0.8);
                     tooltip.html(d.circle_name + "</br>" + d.num_sacr + " Cranes")
-                        .style("left", (d3.event.pageX + 5) + "px")
-                        .style("top", (d3.event.pageY - 28) + "px");
+                        /* .style("left", (d3.event.pageX + 5) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px"); */
+						.style("left", (50 + parseFloat(d3.select(this).attr("cx")) + "px"))
+                        .style("top", (30 + parseFloat(d3.select(this).attr("cy")) + "px"));
                 })
                 .on("mouseout", function(d) {
                     tooltip.transition()
                         .duration(400)
                         .style("opacity", 0);
                 });
-
         }
 
         // Draw the line showing the change in GMC each year.
@@ -230,11 +236,11 @@ function drawPopChart() {
     var w = $popGraphic.width() - margin.left - margin.right;
 
     if (w < 400) {
-        pop_graphic_aspect_height = 7;
-    } else if (w < 800) {
+        pop_graphic_aspect_height = 6;
+    } else if (w < 900) {
         pop_graphic_aspect_height = 5;
     } else {
-        pop_graphic_aspect_height = 4;
+        pop_graphic_aspect_height = 5;
     }
 
     // Based on that width, use the aspect ratio values to calculate what the graphic’s height should be.
@@ -291,7 +297,7 @@ function drawPopChart() {
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + h + ")")
-            .call(xAxis.tickFormat(d3.format("")))
+            .call(xAxis.tickFormat(d3.format("")).ticks(5))
             .append("text")
             .attr("class", "label")
             .attr("fill", "#111")
@@ -304,7 +310,7 @@ function drawPopChart() {
         // y-axis
         svg.append("g")
             .attr("class", "y axis")
-            .call(yAxis)
+            .call(yAxis.ticks(5))
             .append("text")
             .attr("class", "label")
             .attr("fill", "#111")
@@ -312,7 +318,7 @@ function drawPopChart() {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Counted Sandhills")
+            .text("CBC Sandhills")
             .style("font-size", "10px");
 
         // Create the line for the gmc

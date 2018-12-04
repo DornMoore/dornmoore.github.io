@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Saving Cranes</title>
+	<meta name="description" content="Interactive Visualization of Sandhill Crane distribution changes using Christmas Bird count data.">
+	
+	<link rel="shortcut icon" href="img/favicon_icf.jpg">
+	
+	<!-- CSS stylesheets and scripts -->
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
+	<!-- <link rel="stylesheet" href="css/slimmenu.css"> -->
+	<!-- <link rel="stylesheet" href="css/special.css"> -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+	
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+	<!-- <script src="/lib/leaflet.ajax.min.js"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/mapStyle.css">
+	<link rel="stylesheet" href="lib/leaflet.css"/>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+	<link rel="stylesheet" href="lib/leaflet.fullscreen.css" />
+	<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> <!-- JQuery ui declaration--->
+	<script src="lib/leaflet.js"></script>
+	<script src="lib/leaflet.fullscreen.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script><!-- Jquery mobile/touch  declaration--->
+	<script src="lib/SliderControl.js" type="text/javascript"></script><!-- slider js declaration--->
+	<script src="lib/leaflet.ajax.min.js"></script>
+	
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div class="clearfix top-header">
+				<!--Logo starts here-->
+				<div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-4 pr">
+					<img class="img-responsive" src="img/icf.jpg" alt="International Crane Foundation"/>
+				</div>
+				<!--Logo ends here-->
+				<div class="col-lg-3 col-md-3 col-sm-9 col-xs-8 pr">
+					<h1 class="logo-text">International Crane Foundation</h1>
+				</div>
+				
+				<div class="col-lg-7 col-md-7 col-sm-9 navbar navbar-default main-menu">
+					<nav class="navbar-collapse">
+						<ul id="top-navigation" class="nav navbar-nav slimmenu">
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org">Home</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/about-icf/">About</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/support/">Support</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/about-icf/get-involved/careers/">Careers</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/join-our-email-list/">Stay in Touch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="clearfix header-mainmenu">
+				<div class="col-lg-2 col-md-2 hidden-sm">&nbsp;</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<!-- <nav class="navbar navbar-default"> -->
+					<nav class="navbar navbar-default">
+						<div class="container">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div id="myNavbar" class="col-lg-12 col-md-12 col-sm-12 collapse navbar-collapse">
+								<ul id="navigation" class="nav navbar-nav">
+									<li class="menu-item"><a href="https://www.savingcranes.org/">Home</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/plan-a-visit/">Visit</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/category/newsroom/">Newsroom</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/events/">Events</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/species-field-guide/">Cranes</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/our-work/">Our Work</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/education/">Education</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/gallery/">Photo Gallery</a></li>
+									<li class="menu-item"><a href="http://craneshop.org/">Shop</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<div class="container">
+		<div class="clearfix site-content">
+			<div id="map_pane" class="col-lg-7 col-md-7">
+					
+					<div id="map_pane" class="outline">
+							<div id="map" style="width: 86.5%; height: 400px; padding: 0%"></div>
+							<div class="info-box">
+								<div class="buttons" >
+										<input type="button" class="btn btn-primary btn-sm" value="&#8249;" onclick="buttonBack()">
+										<!-- &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; -->
+										<input type="button" class="btn btn-primary btn-sm" value="&#8250;" onclick="buttonForward()">
+								</div>
+							<div class="text info" style="max-height:83%;overflow:auto; padding-top: 30px;">
+									<center><p id="userYear"></p></center>
+								<center><p id="dataText"> Use the slider above to change the data shown in the map</p></center></div>
+							</div>
+							<script src="js/map.js"></script>
+					</div>	
+					
+					<script src="js/map.js"></script>
+					  
+			</div>
+			<div id="graph_pane" class="col-lg-4 col-md-4">
+				<p>Bar Graph goes here</p>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="copyright clearfix">
+			<div class="container">
+				<div class="copyright-txt"> &copy; 2018 International Crane Foundation - All Rights Reserved.</div>
+				<ul class="list-common clearfix clsSepview">
+					<li> <a href="https://www.savingcranes.org/site-map/"> Site Map </a> </li>
+					<li> <a href="https://www.savingcranes.org/wp-content/uploads/2018/04/ICF_internet_privacy_policy_4-25-18.pdf" target="_blank"> Privacy Policy </a></li>
+					<li><a href="https://www.savingcranes.org/board-member/"> Board of Directors Login </a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>
