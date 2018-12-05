@@ -39,7 +39,7 @@
 
 .buttons{
   text-align: center;
-  padding-top: 20px;
+  padding-top: 10px;
   color: black;
   text-decoration: none;
   font-size: 12px;
@@ -84,47 +84,6 @@
   background: #4CAF50;
   cursor: pointer;
 }
-
-/* .slidecontainer {
-  padding-top: 10px;
-  padding-left: 8px;
-  padding-right: 8px;
-  width: 100%;
-}
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #337ab7;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 10px;
-  border-radius: 50%;
-  background: #337ab7;
-  cursor: pointer;
-} */
 
 .mapButton {
   position: relative; 
@@ -238,17 +197,75 @@ input:checked + .sliderToggle:before {
   color: white;
 }
 
+.map-container{
+  width: 60%;
+  height: 600px;
+  padding: 0%;
+}
+
 @media only screen and (max-width: 600px) {
   .info-box {
       background-color: #596164;
       position: relative;
       width: 100%;
-      height: 10%;
+      height: 360px;
+      overflow: hidden;
+      padding: auto;
   }
-  .map{
-    width: 900px;
-    height: 600px;
-    }
+  .buttons{
+    text-align: center;
+    padding-top: 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  .info-box-items{
+    width:40%;
+    float: left;
+  }
+  .map-container{
+    width: 100%;
+  height: 600px;
+  padding: auto;
+  }
+  .legend-container{
+    width: 60%;
+    margin-left: 0%;
+
+  }
+  .legend-text-top{
+    width: 150px;
+    padding: 10px;
+  }
+  
+  .LegendTitle{
+    width: 145px;
+    padding: 0px;
+    margin: 7px;
+  }
+  .lrg-circle{
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
 }
 
-inline
+.legend-container{
+  padding-top: 50px;
+  width: 30%;
+  height: 50px;
+  padding-left: 35%;
+  overflow: visible;
+
+}
+.lrg-circle{
+  z-index: 999;
+  margin: 0;
+}
+.legend-text-top{
+  width: 150px;
+}
+
+.LegendTitle{
+  line-height: 10%;
+  padding-bottom: 10px;
+}

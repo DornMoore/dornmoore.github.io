@@ -154,6 +154,7 @@ function addZero() {
 
 addZero();
 addData();
+
 var userYear = 2012; //Set to 2012 for our testeing purposes - will want at 1965 for final?
 document.getElementById("myRange").value = userYear;
 document.getElementById("userYear").innerHTML = userYear;
@@ -166,7 +167,7 @@ function buttonForward() {
     if (1965 <= userYear && userYear < 2012) {
         userYear == userYear++;
         document.getElementById("userYear").innerHTML = userYear;
-        document.getElementById("dataText").innerHTML = "Data from " + userYear;
+        document.getElementById("dataText").innerHTML = "";
         map.removeLayer(cbcDataByYear);
         addData();
         cbcDataByYear.bringToFront();
@@ -181,10 +182,10 @@ function buttonBack() {
     if (2012 >= userYear && userYear > 1965) {
         userYear == userYear--;
         document.getElementById("userYear").innerHTML = userYear;
-        document.getElementById("dataText").innerHTML = "Data from " + userYear;
+        document.getElementById("dataText").innerHTML = "";
         map.removeLayer(cbcDataByYear);
         document.getElementById("myRange").value = userYear;
-        addData();
+        addData()
         cbcDataByYear.bringToFront();
         //document.getElementById('range').range = userYear;
     } else {
@@ -212,7 +213,7 @@ function togglePoints() {
     toggle = !toggle;
   };
 
-  document.addEventListener('DOMContentLoaded', function () {
+/*   document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.querySelector('input[type="checkbox"]');
   
     checkbox.addEventListener('change', function () {
@@ -226,5 +227,27 @@ function togglePoints() {
         console.log('Not checked');
       }
     });
-  });
+  }); */
 
+  var toggle = L.easyButton({
+    states: [{
+      stateName: 'startPlay',
+      icon: 'fa fa-play',
+      title: 'start autoplay',
+      onClick: function(control) {
+        playData();
+        console.log('start');
+        control.state('endPlay');
+      }
+    }, {
+      icon: 'fa fa-pause',
+      stateName: 'endPlay',
+      onClick: function(control) {
+        window.clearInterval(startFun);
+        console.log('stop');
+        control.state('startPlay');
+      },
+      title: 'stop autoplay'
+    }]
+  });
+  toggle.addTo(map);
