@@ -111,7 +111,7 @@ function createPropSymbols(years, data, map) {
     mylayer = L.geoJson(data, {
         pointToLayer: function(feature, latlng) {
             //create circle markers
-            return L.circleMarker(latlng, geojsonMarkerOptions).on({
+            return L.circleMarker(latlng, set_feature_style(userYear)).on({
                 mouseover: function(e) {
                     this.openPopup();
                 },
