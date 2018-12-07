@@ -1,7 +1,33 @@
 //Grab our data from the geojson file via an ajax call,
 function getData() {
-    // var mylayer;
+    // Add States Layer underneath
+    $.ajax("data/EPstates.geojson", {
+        beforeSend: function(xhr){
+            if (xhr.overrideMimeType)
+            {
+              xhr.overrideMimeType("application/json");
+            }
+          },
+        dataType: "json",
+        success: function(response) {
+            states = new L.GeoJSON(response,
+                {style: { // add style options to layer
+                    fillOpacity: 0, //fill opacity
+                    color: "#c0c0c0", //outline color
+                    weight: 1 // line weight
+                    }
+                }).addTo(map); // add to leaflet map)
+        }
+    })
+
+    // Add Circle Data
     $.ajax("data/cbcCircleDataByYear.geojson", {
+        beforeSend: function(xhr){
+            if (xhr.overrideMimeType)
+            {
+              xhr.overrideMimeType("application/json");
+            }
+          },
         dataType: "json",
         success: function(response) {
             // Populate the the GLOBAL variable mydata
@@ -21,15 +47,8 @@ function getData() {
             alert('There has been a problem loading the data. filename: bcCircleDataByYear.geojson');
         }
     });
-    var states = new L.GeoJSON.AJAX("data/EPstates.geojson", {
-        style: { // add style options to layer
-            fillOpacity: 0, //fill opacity
-            color: "#c0c0c0", //outline color
-            weight: 1 // line weight
-        }
-    }).addTo(map); // add to leaflet map
-}
 
+}
 
 // Data processing creates contents for the GLOBAL variable info
 //
