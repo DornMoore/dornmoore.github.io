@@ -120,7 +120,7 @@ function createPropSymbols(years, data, map) {
                 }
             });
 
-            return L.popupContent()
+            // return L.popupContent()
         }
     }).addTo(map);
 
