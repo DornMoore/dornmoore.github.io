@@ -248,10 +248,10 @@ function updatePropSymbols(year) {
         // format value of attributes depending on the
         var value = props[attribute];
         var myPopup = popContent(value, props.circle_name, year)
-        if (myPopup == "unbind") {
-            layer.unbindPopup();
-        } else {
+        if (myPopup != "unbind") {
             layer.bindPopup(myPopup);
+        } else {
+            layer.unbindPopup();
         }
 
     })
@@ -431,12 +431,18 @@ var map = L.map('map', {
     } // options to pass to fullscreen add on
 });
 //add limitations for map extent
-var bounds = [
+var openBounds = [
     [49.00, -94.00],
     [25.00, -70.00]
-] // define bounds of the map to prevent panning past the relevant area
-map.fitBounds(bounds); // sets the map to the bounds
-map.setMaxBounds(bounds); // sets the max bounds that can be panned around
+] 
+var extentBounds = [
+    [50.00, -96.00],
+    [24.00, -65.00]
+] 
+
+// define bounds of the map to prevent panning past the relevant area
+map.fitBounds(openBounds); // sets the map to the bounds
+map.setMaxBounds(extentBounds); // sets the max bounds that can be panned around
 
 var baseMaps = { //variable that containts basemaps for switcher
     "Light Basemap": cartoLight, // add pp label for carto light map
