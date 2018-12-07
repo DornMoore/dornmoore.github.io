@@ -1,4 +1,10 @@
 // setup
+var $graphic = $('#lat_chart_pane');
+var graphic_aspect_width = 9;
+var graphic_aspect_height = 5;
+var mobile_threshold = 1000;
+
+// setup
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     w = 960 - margin.left - margin.right,
     h = 600 - margin.top - margin.bottom;
@@ -119,8 +125,8 @@ function callback(error, gmc_data, sacr_cir) {
                 .duration(100)
                 .style("opacity", 0.7);
             tooltip.html(d.circle_name + "</br>"+d.num_sacr+" Cranes")
-                 .style("left", (d3.event.pageX + 5) + "px")
-                 .style("top", (d3.event.pageY - 28) + "px");
+                .style("left", (50 + parseFloat(d3.select(this).attr("cx")) + "px"))
+                .style("top", (30 + parseFloat(d3.select(this).attr("cy")) + "px"));
         })
         .on("mouseout", function(d) {
             tooltip.transition()
