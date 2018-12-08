@@ -110,20 +110,20 @@ function drawPopChart() {
             .text("Counted Sandhills")
             .style("font-size", "10px");
 
-        // Create the line for the gmc
+        // Create the line for the population
         var line = d3.line()
             .x(function(d) { return xScale(d.count_yr); })
             .y(function(d) { return yScale(d.sum_count); })
             .curve(d3.curveMonotoneX);
 
 
-        // Draw the line showing the change in GMC each year.
+        // Draw the line showing the population.
         svg.append("path")
             .datum(cbc_year)
             .attr("class", "line")
             .attr("d", line)
             .style("fill", "none")
-            .style("stroke", "#ffab00")
+            .style("stroke", "#919A3E")
             .style("stroke-width", "3");
 
     // };

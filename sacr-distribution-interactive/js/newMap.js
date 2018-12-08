@@ -1,7 +1,33 @@
 //Grab our data from the geojson file via an ajax call,
 function getData() {
-    // var mylayer;
+    // Add States Layer underneath
+    $.ajax("data/EPstates.geojson", {
+        beforeSend: function(xhr){
+            if (xhr.overrideMimeType)
+            {
+              xhr.overrideMimeType("application/json");
+            }
+          },
+        dataType: "json",
+        success: function(response) {
+            states = new L.GeoJSON(response,
+                {style: { // add style options to layer
+                    fillOpacity: 0, //fill opacity
+                    color: "#c0c0c0", //outline color
+                    weight: 1 // line weight
+                    }
+                }).addTo(map); // add to leaflet map)
+        }
+    })
+
+    // Add Circle Data
     $.ajax("data/cbcCircleDataByYear.geojson", {
+        beforeSend: function(xhr){
+            if (xhr.overrideMimeType)
+            {
+              xhr.overrideMimeType("application/json");
+            }
+          },
         dataType: "json",
         success: function(response) {
             // Populate the the GLOBAL variable mydata
@@ -21,15 +47,8 @@ function getData() {
             alert('There has been a problem loading the data. filename: bcCircleDataByYear.geojson');
         }
     });
-    var states = new L.GeoJSON.AJAX("data/EPstates.geojson", {
-        style: { // add style options to layer
-            fillOpacity: 0, //fill opacity
-            color: "#c0c0c0", //outline color
-            weight: 1 // line weight
-        }
-    }).addTo(map); // add to leaflet map
-}
 
+}
 
 // Data processing creates contents for the GLOBAL variable info
 //
@@ -100,7 +119,8 @@ function createPropSymbols(years, data, map) {
     //create default marker options
     var geojsonMarkerOptions = {
         radius: 8,
-        fillColor: "purple",
+        fillColor: "#435125",
+        // fillColor: "purple",
         color: "white",
         weight: 0.75,
         opacity: 0.6,
@@ -111,7 +131,7 @@ function createPropSymbols(years, data, map) {
     mylayer = L.geoJson(data, {
         pointToLayer: function(feature, latlng) {
             //create circle markers
-            return L.circleMarker(latlng, geojsonMarkerOptions).on({
+            return L.circleMarker(latlng, set_feature_style(userYear)).on({
                 mouseover: function(e) {
                     this.openPopup();
                 },
@@ -120,7 +140,7 @@ function createPropSymbols(years, data, map) {
                 }
             });
 
-            return L.popupContent()
+            // return L.popupContent()
         }
     }).addTo(map);
 
@@ -186,7 +206,11 @@ function set_feature_style(attValue) {
     } else {
         var geojsonMarkerOptions = {
             radius: radius,
-            fillColor: "purple",
+            // ICF Orange
+            // fillColor: "#E37F1C",
+            // ICF Green
+            fillColor: "#435125",
+            // fillColor: "purple",
             color: "white",
             weight: 0.75,
             opacity: 0.6,
@@ -229,10 +253,10 @@ function updatePropSymbols(year) {
         // format value of attributes depending on the
         var value = props[attribute];
         var myPopup = popContent(value, props.circle_name, year)
-        if (myPopup == "unbind") {
-            layer.unbindPopup();
-        } else {
+        if (myPopup != "unbind") {
             layer.bindPopup(myPopup);
+        } else {
+            layer.unbindPopup();
         }
 
     })
@@ -295,14 +319,16 @@ function calcPropRadius(attValue) {
     return radius;
 };
 
-
+document.getElementById("buttonOutText").innerHTML = "Show all CBC circles";
 function togglePoints() { //funcion that performs an on or off of data based on its state
     if (!toggle) {
-        toggleState = 0 //reports a toggle state for use later
+        toggleState = 1 //reports a toggle state for use later
+        document.getElementById("buttonOutText").innerHTML = "Hide No-Count CBC Circles ";
         updatePropSymbols(userYear);
         // map.removeLayer(cbcDataZeroItems); // remove the data is button is selected a second time
     } else {
-        toggleState = 1 //reports toggle state for use later
+        toggleState = 0 //reports toggle state for use later
+        document.getElementById("buttonOutText").innerHTML = "Show all CBC circles";
         updatePropSymbols(userYear);
         // map.addLayer(cbcDataZeroItems); // add data if button is selected
     }
@@ -324,7 +350,9 @@ function buttonForward() { // defines what should happen when the user selects t
         userYear == userYear++; // increment the userYear var
         updatePropSymbols(userYear); //Update the map features
     } else { // if the data is out of bounds let the user know it is so and don't increment the data userYear var
-        document.getElementById("dataText").innerHTML = info.maxYear + " is the latest year with data"
+        userYear = info.minYear; // increment the userYear var
+        updatePropSymbols(userYear); //Update the map features
+        // document.getElementById("dataText").innerHTML = info.maxYear + " is the latest year with data"
     }
 };
 
@@ -333,7 +361,9 @@ function buttonBack() { // does the same as obove but in reverse for the back bu
         userYear == userYear--; // step the useryear var down one each time
         updatePropSymbols(userYear); //Update the map features
     } else { //if the user goes out of the data bounds report that and don't allow for it to be incremented.
-        document.getElementById("dataText").innerHTML = info.minYear + " is the earliest year with data";
+        userYear = info.maxYear; // increment the userYear var
+        updatePropSymbols(userYear); //Update the map features
+        // document.getElementById("dataText").innerHTML = info.minYear + " is the earliest year with data";
     }
 };
 
@@ -412,12 +442,18 @@ var map = L.map('map', {
     } // options to pass to fullscreen add on
 });
 //add limitations for map extent
-var bounds = [
+var openBounds = [
     [49.00, -94.00],
     [25.00, -70.00]
-] // define bounds of the map to prevent panning past the relevant area
-map.fitBounds(bounds); // sets the map to the bounds
-map.setMaxBounds(bounds); // sets the max bounds that can be panned around
+] 
+var extentBounds = [
+    [50.00, -96.00],
+    [24.00, -65.00]
+] 
+
+// define bounds of the map to prevent panning past the relevant area
+map.fitBounds(openBounds); // sets the map to the bounds
+map.setMaxBounds(extentBounds); // sets the max bounds that can be panned around
 
 var baseMaps = { //variable that containts basemaps for switcher
     "Light Basemap": cartoLight, // add pp label for carto light map
@@ -448,7 +484,7 @@ slider.oninput = function() { // define the action of the slider
 };
 
 // autoplay Slider
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
     var checkbox = document.querySelector('input[type="checkbox"]');
 
     checkbox.addEventListener('change', function() {
@@ -462,7 +498,29 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Not checked');
         }
     });
-});
+}); */
+
+toggleAuto = false;
+var AutoplayToggleState = 0
+document.getElementById("autoplayText").innerHTML = " Auto Advance Annual Data &nbsp; &#9658; ";
+function AutoPlayToggle() { //funcion that performs an on or off of data based on its state
+    if (!toggleAuto) {
+        AutoplayToggleState = 0 //reports a toggle state for use later
+        console.log('autolayOn');
+        document.getElementById("autoplayText").innerHTML = "Pause &nbsp; &#10074; &#10074; ";
+        playData();
+        
+        // map.removeLayer(cbcDataZeroItems); // remove the data is button is selected a second time
+    } else {
+        AutoplayToggleState = 1 //reports toggle state for use later
+        updatePropSymbols(userYear);
+        console.log('autolayOFF');
+        document.getElementById("autoplayText").innerHTML = " Auto Advance Annual Data &nbsp; &#9658; ";
+        window.clearInterval(startFun)
+        // map.addLayer(cbcDataZeroItems); // add data if button is selected
+    }
+    toggleAuto = !toggleAuto; // want toggle to return false to restar the button actions
+};
 
 $(document).ready(
     getData

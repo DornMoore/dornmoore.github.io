@@ -172,7 +172,7 @@ function drawLatChart() {
             .attr("class", "line")
             .attr("d", line)
             .style("fill", "none")
-            .style("stroke", "#ffab00")
+            .style("stroke", "#E37F1C")
             .style("stroke-width", "3");
 
 

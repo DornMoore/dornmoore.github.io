@@ -15,7 +15,7 @@
 }
 
 .info-box {
-	background: #596164;
+	background: #44697D;
 	padding-bottom: 10px;
 	display: inline-block;
 	position: relative;
@@ -65,9 +65,9 @@
 	-webkit-appearance: none;
 	width: 100%;
 	height: 25px;
-	background: #337ab7;
+	background: #709AAA;
 	outline: none;
-	opacity: 0.7;
+	opacity: 0.9;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
 }
@@ -100,19 +100,21 @@
 }
 
 .buttonOut {
-	background-color: #596164; /* Green */
+	background-color: #A3A86B; /* Green */
 	border: 2px solid #337ab7;
-	color: white;
+	color: black;
+	font-weight: 550;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	-webkit-transition-duration: 0.4s; /* Safari */
 	transition-duration: 0.4s;
 	cursor: pointer;
+	width: 80%;
 }
 
 .buttonOut:hover {
-	background-color: #337ab7; /* Green */
+	background-color: #435125; /* Green */
 	color: white;
 }
 
@@ -141,24 +143,32 @@
 
 .switch {
 	position: relative;
-	display: inline-block;
+	display: block;
 	width: 60px;
 	height: 22px;
 }
-
-
 
 .info-box-items {
 	color: white;
 }
 
+.info-text {
+	margin:auto;
+	color: white;
+	text-align: center;
+	width: 60%;
+	max-height: 83%;
+	overflow: auto; 
+	padding-top: 5px;
+}
+
 @media only screen and (max-width: 600px) {
 	.info-box {
-		background-color: #596164;
+		background-color: #44697D;
 		position: relative;
 		width: 100%;
-		height: 360px;
-		overflow: hidden;
+		height: 100%;
+		/*overflow: hidden;*/
 		padding: auto;
 	}
 	.buttons {
@@ -186,14 +196,26 @@
 		width: 150px;
 		padding: 10px;
 	}
-	.LegendTitle {
-		width: 145px;
+	.legend-title {
+		width: 80%;
 		padding: 0px;
 		margin: 7px;
 	}
 	.lrg-circle {
 		padding-bottom: 0px;
 		padding-top: 0px;
+	}
+	.buttonOut {
+		background-color: #596164; /* Green */
+		border: 2px solid #337ab7;
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+		cursor: pointer;
+		width: 80%;
 	}
 }
 
@@ -217,12 +239,39 @@
 
 .legend-text-top,
 .legend-text-bottom {
-	width: 150px;
+	/*width: 150px;*/
 }
 
-.LegendTitle {
-	line-height: 10%;
+.legend-title {
+	/*line-height: 10%;*/
+	display: block !important;
+	width: 90%;
 	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: 500;
+	text-align: center;
+	margin: auto;
+	/*border: 1px solid red;*/
+}
+
+.legend-block {
+	 /*padding-top: 60px; */
+	/* border: 1px solid black; */
+	text-align: center;
+	display: block !important;
+	width: 90%;
+	margin: auto;
+}
+
+/*.legend-block p {
+	line-height: 100%;
+}*/
+
+.legend_svg {
+	margin: auto;
+	width: 140px;
+	height: 130px;
+
 }
 
 .toggle-container {
@@ -241,31 +290,18 @@
 	padding: 1%;
 }
 
-.buttonOut {
-	background-color: #596164; /* Green */
-	border: 2px solid #337ab7;
-	color: white;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-	cursor: pointer;
-}
+
 
 .toggleDiv {
-	text-align: center;
-	margin-left: 30%;
-	margin-right: 20%;
+	margin: auto;
 	margin-top: 10px;
-	//outline: 2px solid yellow;
+	width: 70%;
 }
 
 .toggleText {
 	color: white;
 	float: left;
-	//outline: 2px solid lightblue;
-	padding-right: 10px;
+	/*padding-right: 10px;*/
 }
 
 .switch input {display:none;}
@@ -285,10 +321,10 @@
 }
 
 .toggleIcon{
-	//outline: 2px solid red;
+	/*outline: 2px solid red;*/
 	padding-top: 1px;
-	float: left;
-	padding-right: 20px;
+	float: right;
+	/*padding-right: 20px;*/
 }
 
 .sliderToggle:before {
