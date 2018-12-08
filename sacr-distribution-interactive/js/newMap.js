@@ -35,6 +35,7 @@ function getData() {
             // console.log(response);
             // use GLOBAL variable info to store some basic, compiled pieces.
             info = dataProcessing(response);
+            userYear=info.maxYear
             // console.log(info);
             // //Create the sequence controls (time slider)
             // createSequenceControls(map, info.years);
@@ -413,7 +414,7 @@ var info
 // var to store teh data
 var mydata
 // var to store the current yearidx (start with 1970)
-var userYear = 2012
+var userYear = 2013
 
 var cartoLight = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: 'Data from National Audubon Society. Map tiles by Carto.'

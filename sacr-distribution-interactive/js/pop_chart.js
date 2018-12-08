@@ -8,7 +8,7 @@ var cbc_year;
 
 // load data
 d3.queue()
-    .defer(d3.csv, "data/cbc_gmc_by_year.csv")
+    .defer(d3.csv, "data/cbc_gmc_by_year_wStdev.csv")
 
     .await(callback);
 

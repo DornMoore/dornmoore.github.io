@@ -107,13 +107,13 @@
 					<h2>Exploring Changes in Distribution and Count of Sandhill Cranes in the Eastern Population over 50 years</h2><em><strong>Data visualization:</strong> Dorn Moore, Jim Cunningham, & Randy Garcia</em><br><em><strong>Research Team:</strong> Anne Lacy, Jeb Barzen, Dorn Moore, Kristin Norris</em><br><br>
 				</div>
 				<div class="col-lg-6 col-md-7 col-sm-12">
-					<p>In 2015, researchers at the International Crane Foundation published a paper in the Journal of Field Ornithology examining the changes in the number and distribution of Sandhill cranes in the Eastern Population (<a href="background/JFODistributionSACR - 2015 Article.pdf" target="blank">download the original article</a>). The Eastern Population of Sandhill Cranes in the United States is located in the Mississippi and Atlantic flyways grew dramatically between 1965 and 2013. The research team used data from annual bird surveys to help grasp the substantial changes in the number of Sandhill cranes in the population from 1965 through 2013.</p>
+					<p>In 2015, researchers at the International Crane Foundation published a paper in the Journal of Field Ornithology examining the changes in the number and distribution of Sandhill cranes in the Eastern Population (<a href="background/JFODistributionSACR - 2015 Article.pdf" target="blank">download the original article</a>). The Eastern Population of Sandhill Cranes in the United States is located in the Mississippi and Atlantic flyways grew dramatically between 1966 and 2013. The research team used data from annual bird surveys to help grasp the substantial changes in the number of Sandhill cranes in the population from 1966 through 2013.</p>
 
 					<p>For winter analysis, the project team used data from the <a href="https://www.audubon.org/conservation/science/christmas-bird-count" target="blank">National Audubon Society’s Christmas Bird Count</a>. Volunteers - citizen scientists - count birds as part of Christmas Bird Count (CBC) between December 14th and January 5th each year. These data are used by researchers to help understand changes in bird populations. Our analysis of CBC data revealed both major increases in the number of Sandhills in the Eastern Population but also significant changes in the timing and distribution of Sandhills during their winter migration.</p>
 				</div>
 				<div class="chart col-lg-6 col-md-5 col-sm-12">
 					<div class="chart_title">
-						Population Trend for Sandhill Cranes in the Eastern Population (1965-2013)
+						Population Trend for Sandhill Cranes in the Eastern Population (1966-2013)
 					</div>
 					<div id="pop_chart_pane" >
 						<p>Bar Graph goes here</p>
@@ -123,13 +123,13 @@
 					</div>
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12">
-					<p>The majority of Sandhill cranes within the Eastern Population spend their summer/breeding months in or north of Michigan, Wisconsin, and Minnesota. The data visualization below helps explore both the changes in numbers of cranes from 1965-2013 but also the changes in the distribution of the cranes during the Christmas Bird Count. It is easy to see the northward shift in the distribution of Sandhills and also how they spread to areas along the Gulf Coast and the Eastern seaboard.</p>
+					<p>The majority of Sandhill cranes within the Eastern Population spend their summer/breeding months in or north of Michigan, Wisconsin, and Minnesota. The data visualization below helps explore both the changes in numbers of cranes from 1966-2013 but also the changes in the distribution of the cranes during the Christmas Bird Count. It is easy to see the northward shift in the distribution of Sandhills and also how they spread to areas along the Gulf Coast and the Eastern seaboard.</p>
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12">
 					<div id="map_pane" class="outline">
 						<div class="info-box">
 							<div class="slidecontainer">
-								<input type="range" min="1965" max="2012" step = "1" value="2012" class="slider" id="myRange">
+								<input type="range" min="1966" max="2013" step = "1" value="2013" class="slider" id="myRange">
 							</div>
 							<div class="info-box-items">
 								<div class="buttons" >
@@ -141,12 +141,12 @@
 										<h2 id="userYear"></h2>
 									</div>
 									<div id= "mapButton" class="mapButton">
-										<a  data-toggle="tooltip" title="Show Christmas Bird Count locations that didn’t see Sandhill cranes">
+										<a data-toggle="tooltip" title="Show Christmas Bird Count locations that didn’t see Sandhill cranes">
 										<button class="buttonOut" onclick="togglePoints();"><text id="buttonOutText"></text></button>
 										</a>
 									</div>
 									<div id= "mapButton" class="mapButton">
-										<a  data-toggle="tooltip" title="Auto Advance Annual Data">
+										<a data-toggle="tooltip" title="Auto Advance Annual Data">
 										<button class="buttonOut" onclick="AutoPlayToggle();"><text id="autoplayText"></text></button>
 										</a>
 									</div>
@@ -159,24 +159,26 @@
 									<br><br>Sandhill Cranes Counted at each Christmas Bird Count Location
 								</div>
 
-								<div class="legend-value">15,761</div>
+								<!-- <div class="legend-value">15,761</div> -->
 								<svg class="legend_svg" xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMin">
 									<!-- White background to better show the color -->
-									<circle cx="70" cy="64" r="60" stroke="white" stroke-width="1" fill="white" fill-opacity="1"/>
+									<text x="70"y="12" text-anchor="middle" font-family="sans-serif" font-size="14px" fill="white">15,761 Cranes</text>
+									<circle cx="70" cy="80" r="60" stroke="white" stroke-width="1" fill="white" fill-opacity="1"/>
 									<!-- Value 8788 - 15761 -->
-									<circle cx="70" cy="64" r="60" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
+									<circle cx="70" cy="80" r="60" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
 									<!-- Value 4585 - 8788 -->
-									<circle cx="70" cy="94" r="30" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
+									<circle cx="70" cy="110" r="30" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
 									<!-- Value 2071 - 4585 -->
-									<circle cx="70" cy="108" r="16" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
+									<circle cx="70" cy="124" r="16" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
 									<!-- Value 534 - 2071 -->
-									<circle cx="70" cy="116" r="8" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
+									<circle cx="70" cy="132" r="8" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
 									<!-- Value 1 - 534 -->
-									<circle cx="70" cy="120" r="4" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
+									<circle cx="70" cy="136" r="4" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0.4"/>
 									<!-- Value of 1 -->
-									<circle cx="70" cy="122" r="2.5" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0"/>
+									<circle cx="70" cy="138" r="2.5" stroke="white" stroke-width="1" fill="#435125" fill-opacity="0"/>
+									<text x="70"y="160" text-anchor="middle" font-family="sans-serif" font-size="14px" fill="white">1 Crane</text>
 								</svg> 
-								<div id="legend-value">1</div>
+								<!-- <div id="legend-value">1</div> -->
 								
 							</div>
 						</div>
@@ -187,7 +189,7 @@
 					Although these data do not necessarily reflect the ultimate wintering area for Sandhills in the region, they do reflect changes in the areas that will still support cranes as winter arrives. Sandhills are hardy birds; many of them will wait to migrate until open water for roosting and drinking has frozen over completely. Sandhills are able to postpone their migration until later than the Christmas Bird Count each year. The research team documented a significant northern shift in the average latitude of the Eastern Population at the Christmas Bird Count each year. The chart below shows the northward shift and the broadening range of latitudes where Sandhills are staging or wintering each year. <br><br>
 				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12">
-					<div class="chart_title">Average Latitude of Sandhill Cranes Recorded in Christmas Bird Count (1965 - 2013)
+					<div class="chart_title">Average Latitude of Sandhill Cranes Recorded in Christmas Bird Count (1966 - 2013)
 					</div>
 					<div id="lat_chart_pane" >
 					</div>

@@ -22,15 +22,6 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 }); // jquery that enables bootstrap tooltips
 
-$('input[name=checkbox]').change(function(){
-    if($(this).is(':checked')) {
-        // Checkbox is checked..
-        console.log('checked')
-    } else {
-        // Checkbox is not checked..
-        console.log('not checked')
-    }
-});
 
 var cbcDataByYear = { 'Empty': L.tileLayer('') }; // declaring e,pty leaflet layer, avoids issues with logic of var not being avaialble
 
@@ -93,10 +84,10 @@ slider.oninput = function() { // define the action of the slider
 var layerControl = L.control.layers(baseMaps).addTo(map); // add layer control to map
 
 // get all the values in the dataset to create a Jenks Natural Breaks Classification for all data 
-var classRanges =[]
+var classRanges =[] 
 $.getJSON('data/cbcCircleDataByYear.geojson', function(data){
-    var items = [];
-    var uValues = [];
+    var items = []; 
+    var uValues = []; 
 
     // console.log(data.features)
     $.each(data.features, function(i,feature){
@@ -191,7 +182,7 @@ function addZero() { // same as the above function but for points with a value o
 };
 
 addZero(); //run the zero item function
-map.removeLayer(cbcDataZeroItems);
+map.removeLayer(cbcDataZeroItems); //remove the layers with the no count locations
 
 addData(); //run the cbc count function
 
@@ -250,7 +241,7 @@ function playData() { // function that progresses through the data automaticlay
         if (userYear == 2012) { // if the reach 2012 set it back to the begining to create a loop
             userYear = 1965;
         };
-    }, 600);
+    }, 600);//time interval
 };
 
 var toggle = L.easyButton({ // add leaflet easy button to the map as a way to play the data
@@ -295,4 +286,3 @@ function updateMap() {
     updateLatChart(); // update the Average Latitude Chart to indicate year
 };
 
-//should work to start the autoplay
