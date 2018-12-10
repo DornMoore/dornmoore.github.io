@@ -89,9 +89,15 @@
 
 .slider::-moz-range-thumb {
 	width: 25px;
-	height: 25px;
-	background: #4CAF50;
+	height: 24px;
+	border: none;
+	border-radius: 0%;
+	background: white;
 	cursor: pointer;
+}
+
+.slider::-moz-range-track{
+	background: #709AAA;
 }
 
 .mapButton {
