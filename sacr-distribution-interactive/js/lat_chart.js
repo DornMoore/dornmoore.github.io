@@ -1,15 +1,16 @@
 // setup
+// -- This section used for formating area in reponsive --
 var $graphic = $('#lat_chart_pane');
 var graphic_aspect_width = 9;
 var graphic_aspect_height = 5;
 var mobile_threshold = 1000;
 
+// --Globals for moving data about
 var gmc_data; // Set Global variable for GMC data
 var sacr_cir; // Set Global variable for Circle data
 var myYear;
 
-var lats;
-
+// Go grabe the data files
 d3.queue()
         .defer(d3.csv, "data/cbc_gmc_by_year_wStdev.csv")
         .defer(d3.csv, "data/qry_cbc_count_by_year.csv")
@@ -20,11 +21,11 @@ function callback(error, gmc, cir) {
     if (error) throw error;
     gmc_data = gmc;
     sacr_cir = cir;
+    // used to quickly acces year information
     yrData = d3.map(gmc_data,function(d){return d.count_yr; });
 
     drawLatChart();
 }
-
 
 
 function drawLatChart() {
@@ -61,14 +62,6 @@ function drawLatChart() {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // svg.append("text")
-    //     .attr("x", (w / 2))
-    //     .attr("y", 0 - (margin.top/3))
-    //     .attr("text-anchor", "middle")
-    //     .style("font-family", "serif")
-    //     .style("font-size", "20px")
-    //     .text("Average Latitude of Sandhill Cranes Recorded in Christmas Bird Count");
-
     // add the tooltip area to the webpage
     var tooltip = d3.select("#lat_chart_pane").append("div")
         .attr("class", "tooltip")
@@ -77,8 +70,6 @@ function drawLatChart() {
     // don't want dots overlapping axis, so add in buffer to data domain
     xScale.domain([d3.min(gmc_data, xValue) - 1, d3.max(gmc_data, xValue) + 1]);
     yScale.domain([d3.min(sacr_cir, yValue) - 1, d3.max(sacr_cir, yValue) + 1]);
-
-    // console.log(d3.min(gmc_data[count_yr]));
 
     // x-axis
     svg.append("g")
@@ -132,6 +123,7 @@ function drawLatChart() {
         .style("opacity", "0.25");
 
 
+    // draw differently if window size is too small
     if (w >= 700) {
         // draw dots for
         svg.selectAll(".cirdot")
@@ -149,7 +141,17 @@ function drawLatChart() {
             .style("stroke", "#F5F5F5")
             .style("stroke-width", "0.25")
             .on("mouseover", function(d) {
+                // get the string length of the label
+                var l = d.circle_name.length;
+                // If the length is under a threshold, bottom it out
+                if (l<14){l=14}
+                // multiply the l by 6.5 for the width
+                l=l*6.5
+                // console.log(l);
                 tooltip.transition()
+                    // Set the width to be slightly more responsive to the content size.
+                    .style("width",function(){console.log(l*2); return l + "px";})
+                    .style("height", "36px")
                     .duration(200)
                     .style("opacity", 0.8);
                 tooltip.html(d.circle_name + "</br>" + d.num_sacr + " Cranes")
@@ -290,6 +292,8 @@ function updateYear(w) {
             })
             .on("mouseover", function(d) {
                 tooltip.transition()
+                    .style("width","130px")
+                    .style("height", "36px")
                     .duration(200)
                     .style("opacity", 1);
                 tooltip.html("The average latitude in <br><strong>"+ d.count_yr +"</strong> was <strong>" + parseFloat(d.lat).toFixed(2) +"</strong>")

@@ -1,6 +1,6 @@
 //Grab our data from the geojson file via an ajax call,
 function getData() {
-    // Add States Layer underneath
+    // Add States Layer 
     $.ajax("data/EPstates.geojson", {
         beforeSend: function(xhr){
             if (xhr.overrideMimeType)
@@ -17,6 +17,10 @@ function getData() {
                     weight: 1 // line weight
                     }
                 }).addTo(map); // add to leaflet map)
+        },
+        error: function() {
+            //Let the user know if they cannot load the data.
+            alert('There has been a problem loading the data. filename: EPstates.geojson');
         }
     })
 
@@ -32,20 +36,16 @@ function getData() {
         success: function(response) {
             // Populate the the GLOBAL variable mydata
             circData = response;
-            // console.log(response);
             // use GLOBAL variable info to store some basic, compiled pieces.
             info = dataProcessing(response);
             userYear=info.maxYear
-            // console.log(info);
-            // //Create the sequence controls (time slider)
-            // createSequenceControls(map, info.years);
             //call function to create proportional
             createPropSymbols(info.years, response, map);
 
         },
         error: function() {
             //Let the user know if they cannot load the data.
-            alert('There has been a problem loading the data. filename: bcCircleDataByYear.geojson');
+            alert('There has been a problem loading the data. filename: cbcCircleDataByYear.geojson');
         }
     });
 
@@ -175,8 +175,6 @@ function set_feature_style(attValue) {
         radius = 30;
     } else { radius = 60; }
 
-    // var properties = feature.properties;
-
     if (attValue == null) {
         var geojsonMarkerOptions = {
             opacity: 0,
@@ -197,8 +195,6 @@ function set_feature_style(attValue) {
         var geojsonMarkerOptions = {
             radius: 0,
             fillColor: "white",
-            // color: "gray",
-            // weight: 0.75,
             opacity: 0,
             fillOpacity: 0
         };
@@ -206,11 +202,7 @@ function set_feature_style(attValue) {
     } else {
         var geojsonMarkerOptions = {
             radius: radius,
-            // ICF Orange
-            // fillColor: "#E37F1C",
-            // ICF Green
             fillColor: "#435125",
-            // fillColor: "purple",
             color: "white",
             weight: 0.75,
             opacity: 0.6,
@@ -220,22 +212,6 @@ function set_feature_style(attValue) {
     }
 }
 
-
-
-// //For each feature.. RUN THIS
-// function onEachFeature(feature, layer) {
-
-//     //no property named popupContent; instead, create html string with all properties
-//     // var popupContent = "";
-//     var attribute = focusAttribute;
-//     // var for the attribute's YEAR
-//     var year = attribute;
-
-//     // format value of attributes depending on the
-//     var value = feature.properties[attribute];
-//     // popupContent
-//     layer.bindPopup(popContent(value, feature.properties.circle_name, year));
-// };
 
 // Update the Proportional Symbols after changes.
 function updatePropSymbols(year) {
@@ -267,8 +243,6 @@ function updatePropSymbols(year) {
     document.getElementById("userYear").innerHTML = userYear;
     document.getElementById("myRange").value = userYear;
     updateLatChart();
-    // updateTitle(type, year);
-    // updateRankList(mydata, type, year);
 };
 
 
@@ -277,50 +251,43 @@ function popContent(value, circle_name, year) {
     var popupContent = "";
     var valuestring;
     if (value == null) {
-        return "unbind";
+        return "unbind"; //Return unbind so the popup will get dropped
         // Do Nothng if null.
     } else if (value == 0 && toggleState == 0) {
-        return "unbind";
-        // valuestring = "No Sandhill Cranes counted here"
-        // popupContent+= '<div id="popup_title">' + circle_name + '</div>'
-        // popupContent+= '<div id=popup_content">' + valuestring + ' in '+ year +'</div>';
-        // // layer.bindPopup(popupContent);
-        // return popupContent;
-    } else if (value == 0 && toggleState == 1) {
+        return "unbind"; //Return unbind so the popup will get dropped
+    } else if (value == 0 && toggleState == 1) {  // when value is zero and showing zeros
         valuestring = "No Sandhill Cranes counted here"
         popupContent += '<div id="popup_title">' + circle_name + '</div>'
         popupContent += '<div id=popup_content">' + valuestring + ' in ' + year + '</div>';
-        // layer.bindPopup(popupContent);
         return popupContent;
     } else {
         valuestring = value.toLocaleString('en') + ' Sandhill Cranes Counted';
         popupContent += '<div id="popup_title">' + circle_name + '</div>'
         popupContent += '<div id=popup_content">' + valuestring + ' in ' + year + '</div>';
         return popupContent;
-        // layer.bindPopup(popupContent);
     }
 }
 
-// Calculate the radius of the circles drawn on the map.
-function calcPropRadius(attValue) {
+// // Calculate the radius of the circles drawn on the map.
+// function calcPropRadius(attValue) {
 
-    var radius;
-    if (attValue == 0 || attValue == null) {
-        radius = 1;
-    } else if (attValue == 1) {
-        radius = 2.5;
-    } else if (attValue <= 534) {
-        radius = 4;
-    } else if (attValue <= 2071) {
-        radius = 8;
-    } else if (attValue <= 4585) {
-        radius = 16;
-    } else if (attValue <= 8788) {
-        radius = 30;
-    } else { radius = 60; }
+//     var radius;
+//     if (attValue == 0 || attValue == null) {
+//         radius = 1;
+//     } else if (attValue == 1) {
+//         radius = 2.5;
+//     } else if (attValue <= 534) {
+//         radius = 4;
+//     } else if (attValue <= 2071) {
+//         radius = 8;
+//     } else if (attValue <= 4585) {
+//         radius = 16;
+//     } else if (attValue <= 8788) {
+//         radius = 30;
+//     } else { radius = 60; }
 
-    return radius;
-};
+//     return radius;
+// };
 
 document.getElementById("buttonOutText").innerHTML = "Show all CBC circles";
 function togglePoints() { //funcion that performs an on or off of data based on its state
@@ -328,26 +295,15 @@ function togglePoints() { //funcion that performs an on or off of data based on 
         toggleState = 1 //reports a toggle state for use later
         document.getElementById("buttonOutText").innerHTML = "Hide No-Count CBC Circles ";
         updatePropSymbols(userYear);
-        // map.removeLayer(cbcDataZeroItems); // remove the data is button is selected a second time
     } else {
         toggleState = 0 //reports toggle state for use later
         document.getElementById("buttonOutText").innerHTML = "Show all CBC circles";
         updatePropSymbols(userYear);
-        // map.addLayer(cbcDataZeroItems); // add data if button is selected
     }
     toggle = !toggle; // want toggle to return false to restar the button actions
 };
 
-function togglePlay() { // function that plays nicely with the play button, allows me to tell if the user has switched to on and readd the data when necessary
-    updatePropSymbols(userYear);
-    if (toggleState == 1) {
-        // map.removeLayer(cbcDataZeroItems);
-        // map.addLayer(cbcDataZeroItems);
-    } else { // do nothing if the state is zero
-        console.log('0');
-    }
-}
-//testline to delete
+
 function buttonForward() { // defines what should happen when the user selects the forward button
     if (info.minYear <= userYear && userYear < info.maxYear) { // what to do if the selection is whithin bounds of the data
         userYear == userYear++; // increment the userYear var
@@ -355,7 +311,6 @@ function buttonForward() { // defines what should happen when the user selects t
     } else { // if the data is out of bounds let the user know it is so and don't increment the data userYear var
         userYear = info.minYear; // increment the userYear var
         updatePropSymbols(userYear); //Update the map features
-        // document.getElementById("dataText").innerHTML = info.maxYear + " is the latest year with data"
     }
 };
 
@@ -366,41 +321,20 @@ function buttonBack() { // does the same as obove but in reverse for the back bu
     } else { //if the user goes out of the data bounds report that and don't allow for it to be incremented.
         userYear = info.maxYear; // increment the userYear var
         updatePropSymbols(userYear); //Update the map features
-        // document.getElementById("dataText").innerHTML = info.minYear + " is the earliest year with data";
     }
 };
 
 function playData() { // function that progresses through the data automaticlay
     window.startFun = window.setInterval(function() { //sets 400ms as the time to increment through the data
         buttonForward(); //run button forward function to progress through the data
-        togglePlay(); // run teh play button for the toggle of zero data
-        if (userYear == info.maxYear) { // if the reach 2012 set it back to the begining to create a loop
+        
+        if (userYear == info.maxYear) { // if the reach MAX set it back to the begining to create a loop
             userYear = info.minYear;
         };
     }, 600);
 };
 
-// var toggle = L.easyButton({ // add leaflet easy button to the map as a way to play the data
-//     states: [{ //button is a toggle and performs two seperate actions based on the order of the click
-//         stateName: 'startPlay', //name state
-//         icon: 'fa fa-play', //play icon
-//         title: 'start autoplay', //naming the button
-//         onClick: function(control) { //runt the autoplay of the data
-//             playData();
-//             control.state('endPlay'); //progresses the button to the second state after clicked initially
-//         }
-//     }, {
-//         icon: 'fa fa-pause', //pause icon
-//         stateName: 'endPlay', //name the state
-//         onClick: function(control) { //stop the autoplay of the data
-//             window.clearInterval(startFun); //return to original state
-//             control.state('startPlay'); //return the button to its orginial state of play
-//         },
-//         title: 'stop autoplay' //name the button in tooltip
-//     }]
-// });
-// toggle.addTo(map); //add the toggle easy button to the map
-
+// function called to update the lat_chart.js
 function updateLatChart() {
     // Get the script lat_chart.js
     $.getScript('js/lat_chart.js', function() {
@@ -461,8 +395,7 @@ map.setMaxBounds(extentBounds); // sets the max bounds that can be panned around
 var baseMaps = { //variable that containts basemaps for switcher
     "Light Basemap": cartoLight, // add pp label for carto light map
     "Dark Basemap": cartoDark, // add pp label for carto dark map
-    "Satellite Imagery": esriSatellite, // add pp label for Esri Satellite Map
-    // "Open Street Map": osmMap, // add pp label for open street map
+    // "Satellite Imagery": esriSatellite, // add pp label for Esri Satellite Map
 };
 var layerControl = L.control.layers(baseMaps).addTo(map); // add layer control to map
 
@@ -486,22 +419,6 @@ slider.oninput = function() { // define the action of the slider
     updatePropSymbols(userYear); //Update the map features
 };
 
-// autoplay Slider
-/* document.addEventListener('DOMContentLoaded', function() {
-    var checkbox = document.querySelector('input[type="checkbox"]');
-
-    checkbox.addEventListener('change', function() {
-        if (checkbox.checked) {
-            // do this
-            playData();
-            console.log('Checked');
-        } else {
-            // do that
-            window.clearInterval(startFun)
-            console.log('Not checked');
-        }
-    });
-}); */
 
 toggleAuto = false;
 var AutoplayToggleState = 0
