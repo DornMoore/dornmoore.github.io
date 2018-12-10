@@ -201,20 +201,23 @@ function drawLatChart() {
                 else { return "20px"}
             })
             // .style("font-weight","400")
-            .style("fill","#E37F1C")
+            .style("fill","black")
             .text(function(d){return "Mean latitude in "});
 
         // Use the append("tspan") to change styles withing a text element.
         label.append("tspan")
             .style("font-weight","bold")
+            .style("fill","#E37F1C")
             .text(function(d){return userYear});
 
         label.append("tspan")
             .style("font-weight", "normal")
+            .style("fill","black")
             .text(" was ");
 
         label.append("tspan")
             .style("font-weight","bold")
+            .style("fill","#E37F1C")
             .text(function(){return parseFloat(yrData["$"+userYear].lat).toFixed(2)});
 
 
@@ -290,7 +293,7 @@ function updateYear(w) {
                     .duration(200)
                     .style("opacity", 1);
                 tooltip.html("The average latitude in <br><strong>"+ d.count_yr +"</strong> was <strong>" + parseFloat(d.lat).toFixed(2) +"</strong>")
-                    .style("left", (50 + parseFloat(d3.select(this).attr("cx")) + "px"))
+                    .style("left", (65 + parseFloat(d3.select(this).attr("cx")) + "px"))
                     .style("top", (30 + parseFloat(d3.select(this).attr("cy")) + "px"));
             })
             .on("mouseout", function(d) {
