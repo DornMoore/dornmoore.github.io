@@ -197,8 +197,8 @@ function drawLatChart() {
             .style("background-color", "white")
             .style("font-family","serif")
             .style("font-size", function(){
-                if (w<350) {return "16"}
-                else { return "20"}
+                if (w<350) {return "16px"}
+                else { return "20px"}
             })
             // .style("font-weight","400")
             .style("fill","#E37F1C")
