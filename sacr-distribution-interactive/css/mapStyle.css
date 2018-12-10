@@ -29,13 +29,15 @@
 
 .leaflet-control-layers-toggle {
 	/* background-image: url(/img/mapLayerControl.png) !important; */
-	background-color: #337ab7;
+	/* background-color: #337ab7; */
+	background-color: #6c96a6;
 	background-size: 20px 20px;
 }
   
 .leaflet-touch .leaflet-control-layers-toggle {
 	/* background-image: url(/img/mapLayerControl.png) !important; */
-	background-color: #337ab7;
+	/* background-color: #337ab7; */
+	background-color: #6c96a6;
 }
   
 .leaflet-control-layers-expanded {
@@ -101,7 +103,8 @@
 
 .buttonOut {
 	background-color: #A3A86B; /* Green */
-	border: 2px solid #337ab7;
+	/* border: 2px solid #337ab7; */
+	border: 2px solid #6c96a6;
 	color: black;
 	font-weight: 550;
 	text-align: center;
@@ -207,7 +210,8 @@
 	}
 	.buttonOut {
 		background-color: #596164; /* Green */
-		border: 2px solid #337ab7;
+		/* border: 2px solid #337ab7; */
+		border: 2px solid #6c96a6;
 		color: white;
 		text-align: center;
 		text-decoration: none;
@@ -354,54 +358,15 @@ input:checked + .sliderToggle:before {
 	transform: translateX(26px);
 }
 
-/* .toggleDiv {
-	text-align: center;
-	padding-top: 2px;
-	outline: 2px solid yellow;
-	float: right;
-	padding-right: 30%;
-	margin-right: 30px;
+.btn-primary, 
+.btn-primary:active, 
+.btn-primary:visited {
+	background-color: #709AAA !important;
+	-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+		cursor: pointer;
 }
 
-.switch input {display:none;}
-
-.sliderToggle {
-	position: absolute;
-	text-align: center;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border-radius: 30px;
-	background-color: #ccc;
-	-webkit-transition: .4s;
-	transition: .4s;
+.btn-primary:hover{
+	background-color: #2E3E46 !important;
 }
-
-.sliderToggle:before {
-	position: absolute;
-	border-radius: 20px;
-	content: "";
-	height: 14px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	-webkit-transition: .4s;
-	transition: .4s;
-}
-
-input:checked + .sliderToggle {
-	background-color: #337ab7;
-}
-
-input:focus + .sliderToggle {
-	box-shadow: 0 0 1px #337ab7;
-}
-
-input:checked + .sliderToggle:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
-	transform: translateX(26px);
-} */

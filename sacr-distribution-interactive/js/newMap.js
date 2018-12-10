@@ -144,8 +144,7 @@ function createPropSymbols(years, data, map) {
             // return L.popupContent()
         }
     }).addTo(map);
-
-
+	
     // // Add the functionality for the data type filters.
     // $('a.menu-ui').on('click', function(e) {
     //     // For each filter link, get the 'data-filter' attribute value.
@@ -253,6 +252,9 @@ function updatePropSymbols(year) {
 
         // format value of attributes depending on the
         var value = props[attribute];
+		if (value < 2071) {
+			layer.bringToFront();
+		}
         var myPopup = popContent(value, props.circle_name, year)
         if (myPopup != "unbind") {
             layer.bindPopup(myPopup);

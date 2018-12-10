@@ -46,7 +46,7 @@ h1.logo-text {
 }
 
 a:hover {
-	background-color: #A5702B;
+	/*background-color: #A5702B;*/
 }
 
 .clearfix:after,.clearfix:before {
@@ -252,3 +252,8 @@ button {
 	font-style: italic;
 	font-size: 10;
 }
+
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;}
