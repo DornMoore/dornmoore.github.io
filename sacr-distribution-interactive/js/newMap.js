@@ -3,45 +3,43 @@
 
 //Grab our data from the geojson file via an ajax call,
 function getData() {
-    // Add States Layer 
+    // Add States Layer
     $.ajax("data/EPstates.geojson", {
-        beforeSend: function(xhr){
-            if (xhr.overrideMimeType)
-            {
-              xhr.overrideMimeType("application/json");
+        beforeSend: function(xhr) {
+            if (xhr.overrideMimeType) {
+                xhr.overrideMimeType("application/json");
             }
-          },
+        },
         dataType: "json",
         success: function(response) {
-            states = new L.GeoJSON(response,
-                {style: { // add style options to layer
+            states = new L.GeoJSON(response, {
+                style: { // add style options to layer
                     fillOpacity: 0, //fill opacity
                     color: "#c0c0c0", //outline color
                     weight: 1 // line weight
-                    }
-                }).addTo(map); // add to leaflet map)
+                }
+            }).addTo(map); // add to leaflet map)
         },
         error: function() {
             //Let the user know if they cannot load the data.
             alert('There has been a problem loading the data. filename: EPstates.geojson');
         }
-    })
+    });
 
     // Add Circle Data
     $.ajax("data/cbcCircleDataByYear.geojson", {
-        beforeSend: function(xhr){
-            if (xhr.overrideMimeType)
-            {
-              xhr.overrideMimeType("application/json");
+        beforeSend: function(xhr) {
+            if (xhr.overrideMimeType) {
+                xhr.overrideMimeType("application/json");
             }
-          },
+        },
         dataType: "json",
         success: function(response) {
             // Populate the the GLOBAL variable mydata
             circData = response;
             // use GLOBAL variable info to store some basic, compiled pieces.
             info = dataProcessing(response);
-            userYear=info.maxYear
+            userYear = info.maxYear;
             //call function to create proportional
             createPropSymbols(info.years, response, map);
 
@@ -147,7 +145,7 @@ function createPropSymbols(years, data, map) {
             // return L.popupContent()
         }
     }).addTo(map);
-	
+
     updatePropSymbols(userYear);
 };
 
@@ -221,9 +219,9 @@ function updatePropSymbols(year) {
 
         // format value of attributes depending on the
         var value = props[attribute];
-		if (value < 2071) {
-			layer.bringToFront();
-		}
+        if (value < 2071) {
+            layer.bringToFront();
+        }
         var myPopup = popContent(value, props.circle_name, year)
         if (myPopup != "unbind") {
             layer.bindPopup(myPopup);
@@ -248,7 +246,7 @@ function popContent(value, circle_name, year) {
         // Do Nothng if null.
     } else if (value == 0 && toggleState == 0) {
         return "unbind"; //Return unbind so the popup will get dropped
-    } else if (value == 0 && toggleState == 1) {  // when value is zero and showing zeros
+    } else if (value == 0 && toggleState == 1) { // when value is zero and showing zeros
         valuestring = "No Sandhill Cranes counted here"
         popupContent += '<div id="popup_title">' + circle_name + '</div>'
         popupContent += '<div id=popup_content">' + valuestring + ' in ' + year + '</div>';
@@ -263,6 +261,7 @@ function popContent(value, circle_name, year) {
 
 
 document.getElementById("buttonOutText").innerHTML = "Show all CBC circles";
+
 function togglePoints() { //funcion that performs an on or off of data based on its state
     if (!toggle) {
         toggleState = 1 //reports a toggle state for use later
@@ -300,7 +299,7 @@ function buttonBack() { // does the same as obove but in reverse for the back bu
 function playData() { // function that progresses through the data automaticlay
     window.startFun = window.setInterval(function() { //sets 400ms as the time to increment through the data
         buttonForward(); //run button forward function to progress through the data
-        
+
         if (userYear == info.maxYear) { // if the reach MAX set it back to the begining to create a loop
             userYear = info.minYear;
         };
@@ -355,11 +354,12 @@ var map = L.map('map', {
 var openBounds = [
     [49.00, -94.00],
     [25.00, -70.00]
-] 
+];
+
 var extentBounds = [
     [50.00, -96.00],
     [24.00, -65.00]
-] 
+];
 
 // define bounds of the map to prevent panning past the relevant area
 map.fitBounds(openBounds); // sets the map to the bounds
@@ -372,10 +372,8 @@ var baseMaps = { //variable that containts basemaps for switcher
 };
 var layerControl = L.control.layers(baseMaps).addTo(map); // add layer control to map
 
-
 document.getElementById("myRange").value = userYear; // report the user year to the HTML range slider
 document.getElementById("userYear").innerHTML = userYear; //report userYear to HTML text
-
 
 window.toggle = false; // declaring a variable for use in button to turn off the zero point locations
 window.toggleState = 0 // varaible to detect the state of the button
@@ -396,21 +394,20 @@ slider.oninput = function() { // define the action of the slider
 toggleAuto = false;
 var AutoplayToggleState = 0
 document.getElementById("autoplayText").innerHTML = " Auto Advance Annual Data &nbsp; &#9658; ";
+
 function AutoPlayToggle() { //funcion that performs an on or off of data based on its state
     if (!toggleAuto) {
         AutoplayToggleState = 0 //reports a toggle state for use later
         console.log('autolayOn');
         document.getElementById("autoplayText").innerHTML = "Pause &nbsp; &#10074; &#10074; ";
         playData();
-        
-        // map.removeLayer(cbcDataZeroItems); // remove the data is button is selected a second time
+
     } else {
         AutoplayToggleState = 1 //reports toggle state for use later
         updatePropSymbols(userYear);
         console.log('autolayOFF');
         document.getElementById("autoplayText").innerHTML = " Auto Advance Annual Data &nbsp; &#9658; ";
         window.clearInterval(startFun)
-        // map.addLayer(cbcDataZeroItems); // add data if button is selected
     }
     toggleAuto = !toggleAuto; // want toggle to return false to restar the button actions
 };
