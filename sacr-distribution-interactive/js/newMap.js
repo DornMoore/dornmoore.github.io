@@ -1,3 +1,6 @@
+/* Adds js logic to the map section of the project */
+/* By Dorn Moore, Jim Cunningham, & Randy Garcia */
+
 //Grab our data from the geojson file via an ajax call,
 function getData() {
     // Add States Layer 
@@ -145,16 +148,6 @@ function createPropSymbols(years, data, map) {
         }
     }).addTo(map);
 	
-    // // Add the functionality for the data type filters.
-    // $('a.menu-ui').on('click', function(e) {
-    //     // For each filter link, get the 'data-filter' attribute value.
-    //     var filter = $(this).data('filter');
-    //     // console.log(filter);
-    //     attType=filter;
-    //     e.preventDefault();
-    //     updatePropSymbols(userYear);
-    // });
-
     updatePropSymbols(userYear);
 };
 
@@ -268,26 +261,6 @@ function popContent(value, circle_name, year) {
     }
 }
 
-// // Calculate the radius of the circles drawn on the map.
-// function calcPropRadius(attValue) {
-
-//     var radius;
-//     if (attValue == 0 || attValue == null) {
-//         radius = 1;
-//     } else if (attValue == 1) {
-//         radius = 2.5;
-//     } else if (attValue <= 534) {
-//         radius = 4;
-//     } else if (attValue <= 2071) {
-//         radius = 8;
-//     } else if (attValue <= 4585) {
-//         radius = 16;
-//     } else if (attValue <= 8788) {
-//         radius = 30;
-//     } else { radius = 60; }
-
-//     return radius;
-// };
 
 document.getElementById("buttonOutText").innerHTML = "Show all CBC circles";
 function togglePoints() { //funcion that performs an on or off of data based on its state
@@ -347,7 +320,7 @@ function updateLatChart() {
 //Global Variables
 //var for info from dataProcessing()
 var info
-// var to store teh data
+// var to store the data
 var mydata
 // var to store the current yearidx (start with 1970)
 var userYear = 2013

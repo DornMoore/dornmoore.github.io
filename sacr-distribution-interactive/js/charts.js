@@ -1,3 +1,6 @@
+/* Adds js logic to the chart section of the project */
+/* By Dorn Moore, Jim Cunningham, & Randy Garcia */
+
 // setup
 var $graphic = $('#lat_chart_pane');
 var graphic_aspect_width = 9;

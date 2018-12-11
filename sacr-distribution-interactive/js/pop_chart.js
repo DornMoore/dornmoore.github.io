@@ -1,3 +1,6 @@
+/* Archived JS logic for the chart portion of the project */
+/* By Dorn Moore, Jim Cunningham, & Randy Garcia */
+
 // setup
 var $popGraphic = $('#pop_chart_pane');
 var pop_graphic_aspect_width = 9;

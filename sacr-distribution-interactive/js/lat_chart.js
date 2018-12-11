@@ -1,3 +1,6 @@
+/* Adds js logic to the chart section of the project */
+/* By Dorn Moore, Jim Cunningham, & Randy Garcia */
+
 // setup
 // -- This section used for formating area in reponsive --
 var $graphic = $('#lat_chart_pane');

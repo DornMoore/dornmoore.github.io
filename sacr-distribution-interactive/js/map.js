@@ -1,4 +1,5 @@
-// mpa.js created by Randy Garcia www.randygarcia.xyz
+/* Archived JS logic for the map */
+/* By Dorn Moore, Jim Cunningham, & Randy Garcia */
 //initialize map
 
 //var sliderControl = null;

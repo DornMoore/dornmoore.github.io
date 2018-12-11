@@ -1,4 +1,5 @@
-<!-- added by Randy -->
+/* Adds styling to the map section of the project */
+/* By Dorn Moore, Jim Cunningham, & Randy Garcia */
 
 .map {
 	width: 60%;
@@ -395,7 +396,7 @@ input:checked + .sliderToggle:before {
 		padding-top: 0px;
 	}
 	.buttonOut {
-		background-color: #596164; /* Green */
+		background-color: #A3A86B; /* Green */
 		/* border: 2px solid #337ab7; */
 		border: 2px solid #6c96a6;
 		color: white;
