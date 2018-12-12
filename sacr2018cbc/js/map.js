@@ -85,7 +85,7 @@ var layerControl = L.control.layers(baseMaps).addTo(map); // add layer control t
 
 // get all the values in the dataset to create a Jenks Natural Breaks Classification for all data 
 var classRanges =[] 
-$.getJSON('data/cbcCircleDataByYear.geojson', function(data){
+$.getJSON('data/cbcCircleDataByYear_new.geojson', function(data){
     var items = []; 
     var uValues = []; 
 
