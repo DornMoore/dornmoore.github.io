@@ -1,0 +1,378 @@
+<!-- added by Randy -->
+
+.map {
+	width: 60%;
+	height: 600px;
+	padding: 0%;
+}
+
+.map-container {
+	width: 60%;
+	height: 600px;
+	padding: 0%;
+	position: relative;
+	float: right;
+}
+
+.info-box {
+	background: #44697D;
+	padding-bottom: 10px;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	bottom: 1px;
+	right: 0;
+	height: 600px;
+	width: 40%;
+	color: #EDEFF2;
+}
+
+.leaflet-control-layers-toggle {
+	/* background-image: url(/img/mapLayerControl.png) !important; */
+	/* background-color: #337ab7; */
+	background-color: #6c96a6;
+	background-size: 20px 20px;
+}
+  
+.leaflet-touch .leaflet-control-layers-toggle {
+	/* background-image: url(/img/mapLayerControl.png) !important; */
+	/* background-color: #337ab7; */
+	background-color: #6c96a6;
+}
+  
+.leaflet-control-layers-expanded {
+	color: #333;
+	font-weight: normal;
+	background-color: #EDEFF2;
+}
+
+.buttons {
+	text-align: center;
+	padding-top: 10px;
+	color: black;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.outline {
+	border: none;
+}
+
+.slidecontainer {
+	padding-top: 0px;
+	width: 100%;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 25px;
+	background: #709AAA;
+	outline: none;
+	opacity: 0.9;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	background: white;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 24px;
+	border: none;
+	border-radius: 0%;
+	background: white;
+	cursor: pointer;
+}
+
+.slider::-moz-range-track{
+	background: #709AAA;
+}
+
+.mapButton {
+	position: relative; 
+	z-index: 9999;
+	text-align: center;
+	padding: 1%;
+}
+
+.buttonOut {
+	background-color: #A3A86B; /* Green */
+	/* border: 2px solid #337ab7; */
+	border: 2px solid #6c96a6;
+	color: black;
+	font-weight: 550;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	cursor: pointer;
+	width: 80%;
+}
+
+.buttonOut:hover {
+	background-color: #435125; /* Green */
+	color: white;
+}
+
+.button {
+	border: 0;
+	background: transparent;
+	box-sizing: border-box;
+	width: 0;
+	height: 74px;
+	border-color: transparent transparent transparent #202020;
+	transition: 100ms all ease;
+	cursor: pointer;
+	// play state
+	border-style: solid;
+	border-width: 37px 0 37px 60px;
+
+	&.paused {
+		border-style: double;
+		border-width: 0px 0 0px 60px;
+	}
+
+	&:hover {
+		border-color: transparent transparent transparent #404040;
+	}
+}
+
+.switch {
+	position: relative;
+	display: block;
+	width: 60px;
+	height: 22px;
+}
+
+.info-box-items {
+	color: white;
+}
+
+.info-text {
+	margin:auto;
+	color: white;
+	text-align: center;
+	width: 60%;
+	max-height: 83%;
+	overflow: auto; 
+	padding-top: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+	.info-box {
+		background-color: #44697D;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		/*overflow: hidden;*/
+		padding: auto;
+	}
+	.buttons {
+		text-align: center;
+		padding-top: 20px;
+		color: black;
+		text-decoration: none;
+		font-size: 12px;
+	}
+	.info-box-items {
+		width:40%;
+		float: left;
+	}
+	.map-container {
+		width: 100%;
+		height: 600px;
+		padding: auto;
+	}
+	.legend-container {
+		width: 60%;
+		margin-left: 0%;
+		text-align: center;
+	}
+	.legend-text-top {
+		width: 150px;
+		padding: 10px;
+	}
+	.legend-title {
+		width: 80%;
+		padding: 0px;
+		margin: 7px;
+	}
+	.lrg-circle {
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}
+	.buttonOut {
+		background-color: #596164; /* Green */
+		/* border: 2px solid #337ab7; */
+		border: 2px solid #6c96a6;
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+		cursor: pointer;
+		width: 80%;
+	}
+}
+
+.legend-container {
+	padding-top: 50px;
+	/* width: 30%;
+	height: 50px; */
+	width: 100%;
+	height: 300px;
+	padding-left: 35%;
+	overflow: visible;
+	text-align: center;
+}
+
+.lrg-circle {
+	z-index: 999;
+	margin: 0;
+	width: 100%;
+	border: 1px solid black;
+}
+
+.legend-text-top,
+.legend-text-bottom {
+	/*width: 150px;*/
+}
+
+.legend-title {
+	/*line-height: 10%;*/
+	display: block !important;
+	width: 90%;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: 500;
+	text-align: center;
+	margin: auto;
+	/*border: 1px solid red;*/
+}
+
+.legend-block {
+	 /*padding-top: 60px; */
+	/* border: 1px solid black; */
+	text-align: center;
+	display: block !important;
+	width: 90%;
+	margin: auto;
+}
+
+/*.legend-block p {
+	line-height: 100%;
+}*/
+
+.legend_svg {
+	margin: auto;
+	width: 140px;
+	height: 160px;
+
+}
+
+.toggle-container {
+	outline: 2px solid blue;
+}
+
+.toggle-container-text {
+    outline: 2px solid red;
+    margin-left: 30px;
+}
+
+.mapButton {
+	position: relative; 
+	z-index: 9999;
+	text-align: center;
+	padding: 1%;
+}
+
+
+
+.toggleDiv {
+	margin: auto;
+	margin-top: 10px;
+	width: 70%;
+}
+
+.toggleText {
+	color: white;
+	float: left;
+	/*padding-right: 10px;*/
+}
+
+.switch input {display:none;}
+
+.sliderToggle {
+	position: absolute;
+	text-align: center;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 30px;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.toggleIcon{
+	/*outline: 2px solid red;*/
+	padding-top: 1px;
+	float: right;
+	/*padding-right: 20px;*/
+}
+
+.sliderToggle:before {
+	position: absolute;
+	border-radius: 20px;
+	content: "";
+	height: 14px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .sliderToggle {
+	background-color: #337ab7;
+}
+
+input:focus + .sliderToggle {
+	box-shadow: 0 0 1px #337ab7;
+}
+
+input:checked + .sliderToggle:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+.btn-primary, 
+.btn-primary:active, 
+.btn-primary:visited {
+	background-color: #709AAA !important;
+	-webkit-transition-duration: 0.4s; /* Safari */
+		transition-duration: 0.4s;
+		cursor: pointer;
+}
+
+.btn-primary:hover{
+	background-color: #2E3E46 !important;
+}

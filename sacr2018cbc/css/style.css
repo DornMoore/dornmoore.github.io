@@ -1,0 +1,259 @@
+/* CSS for International Crane Foundation visualization */
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	font: 11px sans-serif;
+	padding-bottom: 66px;
+}
+
+header {
+	border-top: 3px solid;
+	border-bottom: 3px solid;
+	border-color: #51748A;
+	background-color: #EDEFF2;
+}
+
+h1.logo-text {
+	font-size: 18px;
+	top: 10px;
+	text-transform: uppercase;
+}
+
+#top-navigation {
+	margin-top: 25px;
+}
+
+#top-navigation a {
+	color: #9BA243;
+	text-transform: uppercase;
+	font-size: 1em;
+}
+
+#top-navigation a:hover {
+	color: #5E6323;
+}
+
+.navbar-default {
+	background-color: #51748A;
+}
+
+.navbar-header {
+	background-color: #51748A;
+}
+
+a:hover {
+	/*background-color: #A5702B;*/
+}
+
+.clearfix:after,.clearfix:before {
+    display:table;
+    line-height:0;
+    content:"";
+	margin: 0px;
+	padding: 0px;
+}
+.clearfix:after {
+    clear:both
+}
+
+.navbar-default.main-menu {
+	background-color: #EDEFF2;
+    border: none;
+    position: relative;
+}
+
+.navbar-default a {
+	color: red;
+}
+
+.menu-item a {
+	color: #FFF;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
+
+.dot {
+	stroke: #000;
+}
+
+.tooltip {
+	position: absolute;
+	width: 220px;
+	height: 48px;
+	pointer-events: none;
+	background-color: white;
+}
+
+.chart_title{
+	font-family: serif;
+	font-size: 1.4em;
+	text-align: center;
+	margin-bottom: 0px;
+	/*margin-top: 10px;*/
+}
+.chart_description{
+	width: 90%;
+	margin: auto; 
+	margin-top: 0px;
+	margin-bottom: 10px;
+	font-family: sans-serif;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.chartArea {
+	width: 90%;
+	margin: auto;
+}
+
+.chart {
+	
+}
+
+#myNavbar a {
+	color: #FFF;
+	text-transform: uppercase;
+}
+
+#myNavbar a:hover {
+	color: #A5702B;
+	background-color: #EDEFF2;
+}
+
+#content {
+	font-family: sans-serif;
+	font-size: 14px;
+	line-height: 1.8;
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+    color: #333;
+}
+
+button {
+	background-color: red;
+}
+
+@media (max-width:767px) {
+	.navbar.navbar-default.main-menu, .page-cont-left {
+		display: none;
+	}
+	
+	.clsCstm {
+		clear: both;
+		padding-top: 10px;
+	}
+}
+
+.copyright {
+    background: #596164;
+    padding: 30px 0;
+}
+
+.list-common {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.copyright {
+    background: #596164;
+    padding: 30px 0;
+}
+
+.copyright,
+.copyright a {
+    font-size: 13px;
+	/* font-family: open_sansregular; */
+	font-family: Verdana, Geneva, sans-serif;
+    line-height: 13px;
+}
+
+.copyright a,
+.ext-footer a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.copyright a:focus,
+.copyright a:hover,
+.ext-footer a:focus,
+.ext-footer a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.copyright-txt {
+    color: #FFF;
+}
+
+.copyright-txt,
+.list-common.clearfix.clsSepview>li {
+    float: left;
+    border-right: 1px solid #FFF;
+    margin-right: 5px;
+    padding-right: 5px;
+}
+
+.list-common.clearfix.clsSepview {
+    float: left;
+}
+
+.list-common.clearfix.clsSepview>li:last-child {
+    border-right: 0 none;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.list-common.clearfix.clsSepview li:last-child a,
+.subcat-wrap.clearfix>a,
+.table_css .button,
+.wsx-blogpost-wrap li a {
+    font-weight: 700;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #596164;
+	color: #FFF;
+	line-height: 1em;
+}
+
+#map_pane {
+	margin: 1px;
+	margin-bottom: 20px;
+	/* border: 1px solid; */
+}
+
+#graph_pane {
+	margin: 1px;
+	/* border: 1px solid; */
+}
+
+#graph_pane p {
+	margin-bottom: 5px;
+	font-family: serif;
+	font-style: italic;
+	font-size: 10;
+}
+
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;}
