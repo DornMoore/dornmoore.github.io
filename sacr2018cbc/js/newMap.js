@@ -164,16 +164,18 @@ function set_feature_style(attValue) {
     if (attValue == 0 || attValue == null) {
         radius = 2;
     } else if (attValue == 1) {
-        radius = 2.5;
-    } else if (attValue <= 800) {
-        radius = 4;
-    } else if (attValue <= 3000) {
-        radius = 8;
-    } else if (attValue <= 6410) {
-        radius = 16;
-    } else if (attValue <= 10525) {
-        radius = 30;
-    } else { radius = 60; }
+        radius = 2;
+    } else if (attValue <= 468) {
+        radius = 5;
+    } else if (attValue <= 1760) {
+        radius = 10;
+    } else if (attValue <= 4000) {
+        radius = 15;
+    } else if (attValue <= 7348) {
+        radius = 25;
+    } else if (attValue <= 11658) {
+        radius = 40;
+    } else { radius = 65; }
 
     if (attValue == null) {
         var geojsonMarkerOptions = {
