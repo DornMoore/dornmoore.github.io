@@ -169,7 +169,7 @@ function set_feature_style(attValue) {
         radius = 4;
     } else if (attValue <= 3000) {
         radius = 8;
-    } else if (attValue <= 6410 {
+    } else if (attValue <= 6410) {
         radius = 16;
     } else if (attValue <= 10525) {
         radius = 30;
