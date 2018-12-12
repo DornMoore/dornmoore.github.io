@@ -165,13 +165,13 @@ function set_feature_style(attValue) {
         radius = 2;
     } else if (attValue == 1) {
         radius = 2.5;
-    } else if (attValue <= 534) {
+    } else if (attValue <= 800) {
         radius = 4;
-    } else if (attValue <= 2071) {
+    } else if (attValue <= 3000) {
         radius = 8;
-    } else if (attValue <= 4585) {
+    } else if (attValue <= 6410 {
         radius = 16;
-    } else if (attValue <= 8788) {
+    } else if (attValue <= 10525) {
         radius = 30;
     } else { radius = 60; }
 
