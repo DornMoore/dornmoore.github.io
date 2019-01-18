@@ -1,1 +1,1211 @@
-{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.0242,41.20608]},"properties":{"wcep_id":"74_18","obs_date":"2019-01-17","source":"gps","cohort":2018,"loc_cnty":"Jasper","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.31236,27.35192]},"properties":{"wcep_id":"77_18","obs_date":"2019-01-17","source":"gps","cohort":2018,"loc_cnty":"Sarasota","loc_state":"Florida"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.060994,38.945714]},"properties":{"wcep_id":"W10_18","obs_date":"2019-01-15","source":"VOR","cohort":2018,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.763979,38.334642]},"properties":{"wcep_id":"W1_18","obs_date":"2019-01-12","source":"VOR","cohort":2018,"loc_cnty":"Gibson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.149589,38.98113]},"properties":{"wcep_id":"W5_18","obs_date":"2019-01-15","source":"VOR","cohort":2018,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.772863,38.825018]},"properties":{"wcep_id":"W6_18","obs_date":"2019-01-03","source":"VOR","cohort":2018,"loc_cnty":"Lawrence","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.949581,34.53393]},"properties":{"wcep_id":"1_17","obs_date":"2019-01-08","source":"VOR","cohort":2017,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.8789,34.56587]},"properties":{"wcep_id":"2_17","obs_date":"2019-01-17","source":"gps","cohort":2017,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-82.422,29.547]},"properties":{"wcep_id":"24_17","obs_date":"2019-01-13","source":"doppler","cohort":2017,"loc_cnty":"Alachua","loc_state":"Florida"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.90665,34.86552]},"properties":{"wcep_id":"25_17","obs_date":"2019-01-14","source":"gps","cohort":2017,"loc_cnty":"Jackson","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.917762,34.546654]},"properties":{"wcep_id":"3_17","obs_date":"2019-01-08","source":"VOR","cohort":2017,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.92556,37.91956]},"properties":{"wcep_id":"38_17","obs_date":"2019-01-16","source":"gps","cohort":2017,"loc_cnty":"Randolph","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.02507,41.20654]},"properties":{"wcep_id":"39_17","obs_date":"2019-01-17","source":"gps","cohort":2017,"loc_cnty":"Jasper","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.00717,36.74786]},"properties":{"wcep_id":"6_17","obs_date":"2019-01-17","source":"gps","cohort":2017,"loc_cnty":"Hickman","loc_state":"Kentucky"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.69041,37.39842]},"properties":{"wcep_id":"7_17","obs_date":"2019-01-16","source":"gps","cohort":2017,"loc_cnty":"Hopkins","loc_state":"Kentucky"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-83.30373,36.0757]},"properties":{"wcep_id":"72_17","obs_date":"2019-01-17","source":"gps","cohort":2017,"loc_cnty":"Jefferson","loc_state":"Tennessee"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.955742,34.549196]},"properties":{"wcep_id":"L4_17","obs_date":"2019-01-07","source":"VOR","cohort":2017,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.896694,34.569813]},"properties":{"wcep_id":"W3_17","obs_date":"2019-01-08","source":"VOR","cohort":2017,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.955742,34.549196]},"properties":{"wcep_id":"W7_17","obs_date":"2019-01-08","source":"VOR","cohort":2017,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.2836,30.1074]},"properties":{"wcep_id":"30_16","obs_date":"2019-01-09","source":"VOR","cohort":2016,"loc_cnty":"Wakulla","loc_state":"Florida"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.73631,41.37092]},"properties":{"wcep_id":"31_16","obs_date":"2019-01-10","source":"VOR","cohort":2016,"loc_cnty":"LaPorte","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.72849,38.31837]},"properties":{"wcep_id":"69_16","obs_date":"2019-01-17","source":"gps","cohort":2016,"loc_cnty":"Gibson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.625,34.536]},"properties":{"wcep_id":"10_15","obs_date":"2019-01-15","source":"doppler","cohort":2015,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.896694,34.569813]},"properties":{"wcep_id":"11_15","obs_date":"2019-01-08","source":"VOR","cohort":2015,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.955742,34.549196]},"properties":{"wcep_id":"14_15","obs_date":"2019-01-13","source":"VOR","cohort":2015,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.866306,38.893189]},"properties":{"wcep_id":"2_15","obs_date":"2019-01-16","source":"VOR","cohort":2015,"loc_cnty":"Jackson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.641211,38.636279]},"properties":{"wcep_id":"6_15","obs_date":"2019-01-09","source":"VOR","cohort":2015,"loc_cnty":"Lawrence","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-89.9518733,37.9155976]},"properties":{"wcep_id":"63_15","obs_date":"2019-01-09","source":"VOR","cohort":2015,"loc_cnty":"Randolph","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.993772,35.405693]},"properties":{"wcep_id":"66_15","obs_date":"2019-01-08","source":"VOR","cohort":2015,"loc_cnty":"Meigs","loc_state":"Tennessee"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.2836,30.1074]},"properties":{"wcep_id":"67_15","obs_date":"2019-01-09","source":"VOR","cohort":2015,"loc_cnty":"Wakulla","loc_state":"Florida"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.080953,38.906108]},"properties":{"wcep_id":"68_15","obs_date":"2019-01-11","source":"VOR","cohort":2015,"loc_cnty":"Jackson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.806144,38.822101]},"properties":{"wcep_id":"27_14","obs_date":"2019-01-02","source":"VOR","cohort":2014,"loc_cnty":"Lawrence","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.896694,34.569813]},"properties":{"wcep_id":"4_13","obs_date":"2019-01-08","source":"VOR","cohort":2013,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.896694,34.569813]},"properties":{"wcep_id":"59_13","obs_date":"2019-01-08","source":"VOR","cohort":2013,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.993772,35.405693]},"properties":{"wcep_id":"14_12","obs_date":"2019-01-08","source":"VOR","cohort":2012,"loc_cnty":"Meigs","loc_state":"Tennessee"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.58854,41.46657]},"properties":{"wcep_id":"16_12","obs_date":"2019-01-06","source":"VOR","cohort":2012,"loc_cnty":"LaPorte","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.2836,30.1074]},"properties":{"wcep_id":"5_12","obs_date":"2019-01-09","source":"VOR","cohort":2012,"loc_cnty":"Wakulla","loc_state":"Florida"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.806144,38.822101]},"properties":{"wcep_id":"10_11","obs_date":"2019-01-02","source":"VOR","cohort":2011,"loc_cnty":"Lawrence","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.896694,34.569813]},"properties":{"wcep_id":"1_11","obs_date":"2019-01-08","source":"VOR","cohort":2011,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.263873,38.624694]},"properties":{"wcep_id":"15_11","obs_date":"2019-01-09","source":"VOR","cohort":2011,"loc_cnty":"Knox","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.087272,38.931703]},"properties":{"wcep_id":"3_11","obs_date":"2019-01-15","source":"VOR","cohort":2011,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.087272,38.931703]},"properties":{"wcep_id":"7_11","obs_date":"2019-01-15","source":"VOR","cohort":2011,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.087272,38.931703]},"properties":{"wcep_id":"1_10","obs_date":"2019-01-15","source":"VOR","cohort":2010,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.044903,38.952831]},"properties":{"wcep_id":"19_10","obs_date":"2019-01-11","source":"VOR","cohort":2010,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.060994,38.945714]},"properties":{"wcep_id":"23_10","obs_date":"2019-01-15","source":"VOR","cohort":2010,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.7666855,38.3331735]},"properties":{"wcep_id":"25_10","obs_date":"2019-01-16","source":"VOR","cohort":2010,"loc_cnty":"Gibson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.935726,35.424142]},"properties":{"wcep_id":"5_10","obs_date":"2019-01-05","source":"VOR","cohort":2010,"loc_cnty":"Meigs","loc_state":"Tennessee"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.149589,38.98113]},"properties":{"wcep_id":"W3_10","obs_date":"2019-01-15","source":"VOR","cohort":2010,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.744331,38.365417]},"properties":{"wcep_id":"12_09","obs_date":"2019-01-10","source":"VOR","cohort":2009,"loc_cnty":"Gibson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.7666855,38.3331735]},"properties":{"wcep_id":"19_09","obs_date":"2019-01-16","source":"VOR","cohort":2009,"loc_cnty":"Gibson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.200417,39.014583]},"properties":{"wcep_id":"36_09","obs_date":"2019-01-15","source":"VOR","cohort":2009,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.888495,34.557522]},"properties":{"wcep_id":"24_08","obs_date":"2019-01-02","source":"VOR","cohort":2008,"loc_cnty":"Morgan","loc_state":"Alabama"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-84.935726,35.424142]},"properties":{"wcep_id":"28_08","obs_date":"2019-01-05","source":"VOR","cohort":2008,"loc_cnty":"Meigs","loc_state":"Tennessee"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.263873,38.624694]},"properties":{"wcep_id":"29_08","obs_date":"2019-01-09","source":"VOR","cohort":2008,"loc_cnty":"Knox","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.060994,38.945714]},"properties":{"wcep_id":"4_08","obs_date":"2019-01-15","source":"VOR","cohort":2008,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.772863,38.825018]},"properties":{"wcep_id":"16_07","obs_date":"2019-01-03","source":"VOR","cohort":2007,"loc_cnty":"Lawrence","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.087272,38.931703]},"properties":{"wcep_id":"W1_06","obs_date":"2019-01-15","source":"VOR","cohort":2006,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.645038,38.544568]},"properties":{"wcep_id":"12_05","obs_date":"2019-01-12","source":"VOR","cohort":2005,"loc_cnty":"Knox","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-85.866306,38.893189]},"properties":{"wcep_id":"28_05","obs_date":"2019-01-16","source":"VOR","cohort":2005,"loc_cnty":"Jackson","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.046341,38.952987]},"properties":{"wcep_id":"9_05","obs_date":"2019-01-15","source":"VOR","cohort":2005,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.772863,38.825018]},"properties":{"wcep_id":"1_04","obs_date":"2019-01-03","source":"VOR","cohort":2004,"loc_cnty":"Lawrence","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.641211,38.636279]},"properties":{"wcep_id":"16_04","obs_date":"2019-01-09","source":"VOR","cohort":2004,"loc_cnty":"Lawrence","loc_state":"Illinois"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.149589,38.98113]},"properties":{"wcep_id":"8_04","obs_date":"2019-01-15","source":"VOR","cohort":2004,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.645038,38.544568]},"properties":{"wcep_id":"12_03","obs_date":"2019-01-12","source":"VOR","cohort":2003,"loc_cnty":"Knox","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.046341,38.952987]},"properties":{"wcep_id":"13_03","obs_date":"2019-01-15","source":"VOR","cohort":2003,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-87.200417,39.014583]},"properties":{"wcep_id":"18_03","obs_date":"2019-01-15","source":"VOR","cohort":2003,"loc_cnty":"Greene","loc_state":"Indiana"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-86.888495,34.557522]},"properties":{"wcep_id":"13_02","obs_date":"2019-01-02","source":"VOR","cohort":2002,"loc_cnty":"Morgan","loc_state":"Alabama"}}]}
+{
+    "features": [
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.0242,
+                    41.20608
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2018,
+                "loc_cnty": "Jasper",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-17T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "74_18"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -82.31236,
+                    27.35192
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2018,
+                "loc_cnty": "Sarasota",
+                "loc_state": "Florida",
+                "obs_date": "2019-01-17T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "77_18"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.060994,
+                    38.945714
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2018,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W10_18"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.763979,
+                    38.334642
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2018,
+                "loc_cnty": "Gibson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-12T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W1_18"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.149589,
+                    38.98113
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2018,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W5_18"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.772863,
+                    38.825018
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2018,
+                "loc_cnty": "Lawrence",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-03T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W6_18"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.949581,
+                    34.53393
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "1_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.8789,
+                    34.56587
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-17T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "2_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -82.422,
+                    29.547
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Alachua",
+                "loc_state": "Florida",
+                "obs_date": "2019-01-13T00:00:00.000Z",
+                "source": "doppler",
+                "wcep_id": "24_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -85.90665,
+                    34.86552
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Jackson",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-14T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "25_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.917762,
+                    34.546654
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "3_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -89.92556,
+                    37.91956
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Randolph",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-16T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "38_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.02507,
+                    41.20654
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Jasper",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-17T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "39_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -89.00717,
+                    36.74786
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Hickman",
+                "loc_state": "Kentucky",
+                "obs_date": "2019-01-17T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "6_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.69041,
+                    37.39842
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Hopkins",
+                "loc_state": "Kentucky",
+                "obs_date": "2019-01-16T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "7_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -83.30373,
+                    36.0757
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Jefferson",
+                "loc_state": "Tennessee",
+                "obs_date": "2019-01-17T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "72_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.955742,
+                    34.549196
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-07T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "L4_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.896694,
+                    34.569813
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W3_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.955742,
+                    34.549196
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2017,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W7_17"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.2836,
+                    30.1074
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2016,
+                "loc_cnty": "Wakulla",
+                "loc_state": "Florida",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "30_16"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.73631,
+                    41.37092
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2016,
+                "loc_cnty": "LaPorte",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-10T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "31_16"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.72849,
+                    38.31837
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2016,
+                "loc_cnty": "Gibson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-17T00:00:00.000Z",
+                "source": "gps",
+                "wcep_id": "69_16"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.625,
+                    34.536
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "doppler",
+                "wcep_id": "10_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.896694,
+                    34.569813
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "11_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.955742,
+                    34.549196
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-13T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "14_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -85.866306,
+                    38.893189
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Jackson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-16T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "2_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.641211,
+                    38.636279
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Lawrence",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "6_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -89.9518733,
+                    37.9155976
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Randolph",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "63_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.993772,
+                    35.405693
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Meigs",
+                "loc_state": "Tennessee",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "66_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.2836,
+                    30.1074
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Wakulla",
+                "loc_state": "Florida",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "67_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.080953,
+                    38.906108
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2015,
+                "loc_cnty": "Jackson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-11T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "68_15"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.806144,
+                    38.822101
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2014,
+                "loc_cnty": "Lawrence",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-02T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "27_14"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.896694,
+                    34.569813
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2013,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "4_13"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.896694,
+                    34.569813
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2013,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "59_13"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.993772,
+                    35.405693
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2012,
+                "loc_cnty": "Meigs",
+                "loc_state": "Tennessee",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "14_12"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.58854,
+                    41.46657
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2012,
+                "loc_cnty": "LaPorte",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-06T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "16_12"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.2836,
+                    30.1074
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2012,
+                "loc_cnty": "Wakulla",
+                "loc_state": "Florida",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "5_12"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.806144,
+                    38.822101
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2011,
+                "loc_cnty": "Lawrence",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-02T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "10_11"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.896694,
+                    34.569813
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2011,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-08T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "1_11"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.263873,
+                    38.624694
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2011,
+                "loc_cnty": "Knox",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "15_11"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.087272,
+                    38.931703
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2011,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "3_11"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.087272,
+                    38.931703
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2011,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "7_11"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.087272,
+                    38.931703
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2010,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "1_10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.044903,
+                    38.952831
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2010,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-11T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "19_10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.060994,
+                    38.945714
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2010,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "23_10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.7666855,
+                    38.3331735
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2010,
+                "loc_cnty": "Gibson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-16T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "25_10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.935726,
+                    35.424142
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2010,
+                "loc_cnty": "Meigs",
+                "loc_state": "Tennessee",
+                "obs_date": "2019-01-05T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "5_10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.149589,
+                    38.98113
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2010,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W3_10"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.744331,
+                    38.365417
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2009,
+                "loc_cnty": "Gibson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-10T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "12_09"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.7666855,
+                    38.3331735
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2009,
+                "loc_cnty": "Gibson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-16T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "19_09"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.200417,
+                    39.014583
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2009,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "36_09"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.888495,
+                    34.557522
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2008,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-02T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "24_08"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -84.935726,
+                    35.424142
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2008,
+                "loc_cnty": "Meigs",
+                "loc_state": "Tennessee",
+                "obs_date": "2019-01-05T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "28_08"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.263873,
+                    38.624694
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2008,
+                "loc_cnty": "Knox",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "29_08"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.060994,
+                    38.945714
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2008,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "4_08"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.772863,
+                    38.825018
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2007,
+                "loc_cnty": "Lawrence",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-03T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "16_07"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.087272,
+                    38.931703
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2006,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "W1_06"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.645038,
+                    38.544568
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2005,
+                "loc_cnty": "Knox",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-12T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "12_05"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -85.866306,
+                    38.893189
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2005,
+                "loc_cnty": "Jackson",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-16T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "28_05"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.046341,
+                    38.952987
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2005,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "9_05"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.772863,
+                    38.825018
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2004,
+                "loc_cnty": "Lawrence",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-03T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "1_04"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.641211,
+                    38.636279
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2004,
+                "loc_cnty": "Lawrence",
+                "loc_state": "Illinois",
+                "obs_date": "2019-01-09T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "16_04"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.149589,
+                    38.98113
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2004,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "8_04"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.645038,
+                    38.544568
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2003,
+                "loc_cnty": "Knox",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-12T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "12_03"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.046341,
+                    38.952987
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2003,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "13_03"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -87.200417,
+                    39.014583
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2003,
+                "loc_cnty": "Greene",
+                "loc_state": "Indiana",
+                "obs_date": "2019-01-15T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "18_03"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    -86.888495,
+                    34.557522
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "cohort": 2002,
+                "loc_cnty": "Morgan",
+                "loc_state": "Alabama",
+                "obs_date": "2019-01-02T00:00:00.000Z",
+                "source": "VOR",
+                "wcep_id": "13_02"
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
