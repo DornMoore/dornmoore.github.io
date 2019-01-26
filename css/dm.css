@@ -7,6 +7,7 @@
 body {
   padding-top: 6px;
   font-family: Lato;
+  font-size: 1.0em;
 }
 .jumbotron {
   background-color: lightgray;
@@ -16,5 +17,10 @@ h1{
   font-weight: 700;
 }
 .big-title {
-  font-size: 2.0em;
+  font-size: 2.25em;
+  font-weight: 700;
+}
+.medium-title {
+  font-size: 1.75em;
+  font-weight: 700;
 }
