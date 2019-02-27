@@ -1,0 +1,26 @@
+.chart .xAxis path,
+line {
+    stroke: #303030;
+}
+
+.chart .yAxis path,
+line {
+    stroke: #303030;
+}
+
+.chart circle {
+    stroke: #b3b3b3;
+    fill: none;
+}
+
+.xAxis,
+.yAxis {
+    font-size: 0.8em;
+}
+
+.chart path.regressionLine {
+    stroke: rgb(19, 54, 121);
+    fill: none;
+    stroke-width: 2;
+    /* stroke-dasharray: 3, 5; */
+}
