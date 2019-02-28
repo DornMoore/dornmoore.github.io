@@ -59,6 +59,10 @@ $(function() {
         $("#learnMoreBox").show();
 
     })
+    $(".popupCloseButton").click(function(){
+        $(".overlay").hide();
+        $("#learnMoreBox").hide();
+     });
 });
 
 

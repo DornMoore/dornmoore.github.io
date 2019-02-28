@@ -50,6 +50,23 @@
     z-index: 20;
     /* 1px higher than the overlay layer */
 }
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 15px;
+    line-height: 25px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
 
 #learnMoreBox h2 {
     text-align: center;
