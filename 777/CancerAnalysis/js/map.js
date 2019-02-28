@@ -53,6 +53,12 @@ $(function() {
         }
     });
     $("#idwCell").val($("#cellslider").slider("value"));
+
+    $("#learnMore").click(function() {
+        $(".overlay").show();
+        $("#learnMoreBox").show();
+
+    })
 });
 
 
