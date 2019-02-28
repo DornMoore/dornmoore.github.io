@@ -290,7 +290,7 @@ function drawMap(mapContainer, token) {
         $("#tracts").prop('checked', false);
 
         // Call function to draw popup
-        popupProperties(map, "tracts", "<strong>Cancer Rate: </strong>", "canrate")
+        popupProperties(map, "tracts", "<strong>Cancer Rate: </strong>", "canrate");
 
         // Add the layer once the asynchrounous task is done.
         map.addSource("wells", {
@@ -344,8 +344,7 @@ function drawMap(mapContainer, token) {
 
 
     // Call function to draw popup
-    // popupProperties(map, "residuals", "<strong>Predicted value - Observed Value</strong><br><em>negative number indicates model under estimate</em> ", "residualColor")
-
+    popupProperties(map, "wells", "<strong>Nitrate Level: </strong>", "nitr_ran");
 
     $(window).resize(function() {
         resizeDescription();
