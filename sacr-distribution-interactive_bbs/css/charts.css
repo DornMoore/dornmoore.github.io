@@ -1,0 +1,59 @@
+/* Adds CSS style to the Chart section of the project */
+/* By Dorn Moore, Jim Cunningham, & Randy Garcia */
+
+#lat_chart_pane{
+	font-family: serif;
+
+
+}
+.site-content {
+	margin: auto;
+	width: 90%;
+}
+
+#title {
+	fill: currentColor;
+	font-family: sans-serif;
+}
+
+.chart_title{
+	font-family: sans-serif;
+	font-size: 25px;
+	text-align: center;
+}
+.chart_description{
+	width: 90%;
+	/*margin: auto; */
+	margin-bottom: 5px;
+	font-family: serif;
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+  background-color: blue;
+}
+
+.chartArea {
+	width: 90%;
+	margin: auto;
+}
+
+.chart {
+
+}
