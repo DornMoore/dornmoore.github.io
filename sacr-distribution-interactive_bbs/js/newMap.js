@@ -40,6 +40,7 @@ function getData() {
             // use GLOBAL variable info to store some basic, compiled pieces.
             info = dataProcessing(response);
             userYear = info.maxYear;
+            console.log(info.maxSacr)
             //call function to create proportional
             createPropSymbols(info.years, response, map);
 
@@ -167,9 +168,9 @@ function set_feature_style(attValue) {
     //     radius = 30;
     // } else { radius = 60; }
 
-    radius = (attValue/info.maxSacr)*30;
-    if (radius<2.5){
-        radius=2.5
+    radius = (attValue/info.maxSacr) * 30;
+    if (radius<2){
+        radius=2;
     }
 
     if (attValue == null) {
@@ -239,7 +240,7 @@ function updatePropSymbols(year) {
 
     document.getElementById("userYear").innerHTML = userYear;
     document.getElementById("myRange").value = userYear;
-    updateLatChart();
+    // updateLatChart();
 };
 
 
