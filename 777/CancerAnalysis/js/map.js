@@ -523,9 +523,9 @@ function genIDW(points, cell, parameters, gj, map) {
                             var color = feature.properties.residualColor;
                             var group = (feature.properties.residual - mean )/sd;
                             if (group > 0.5){
-                                desc += 'The model <strong><font style="color:'+color+';">under estimates</font></strong> the <br/>observed Cancer rate by <br/>'
+                                desc += 'The model <strong><font style="color:'+color+';">over estimates</font></strong> the <br/>observed Cancer rate by <br/>'
                             } else if (group <-0.5) {
-                                desc += 'The model <strong><font style="color:'+color+';">over estimates</font></strong> the <br/>observed cancer rate by <br/>'
+                                desc += 'The model <strong><font style="color:'+color+';">under estimates</font></strong> the <br/>observed cancer rate by <br/>'
                             } else { 
                                 desc = 'The model estimate matches observed <br>cancer rate within <b>1 standard deviation</b><br/>.'};
 
@@ -536,6 +536,9 @@ function genIDW(points, cell, parameters, gj, map) {
                             } else if (Math.abs(group)>2.5){
                                 desc += '<b><font style="color:'+color+';">more than 2.5 standard deviations.</b></font>'
                             };
+                            desc += '<br>Observed Rate : ' + feature.properties.canrate
+                            desc += '<br>Predicted Rate : ' + feature.properties.pred_canrate.toFixed(2)
+                            
 
                             return '<strong>Model Fit</strong><br/>' + desc + '<br /> '
                         }))
