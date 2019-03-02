@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>International Crane Foundation</title>
+	<meta name="description" content="Interactive Visualization of Sandhill Crane distribution changes using Breeding Bird Survey data.">
+
+	<link rel="shortcut icon" href="img/favicon_icf.jpg">
+
+	<!-- CSS stylesheets and scripts -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="lib/leaflet.css"/>
+	<link rel="stylesheet" href="lib/jQueryUI/jquery-ui.min.css"/>
+	<link rel="stylesheet" href="lib/leaflet.fullscreen.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+
+	<script src="lib/jquery-3.3.1.min.js"></script>
+	<script src="lib/jQueryUI/jquery-ui.min.js"></script> <!-- JQuery ui declaration--->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="lib/leaflet.js"></script>
+	<script src="lib/leaflet.fullscreen.js"></script>
+	<script src="lib/SliderControl.js" type="text/javascript"></script><!-- slider js declaration--->
+	<script src="lib/leaflet.ajax.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
+	<link rel="stylesheet" href="css/mapStyle.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+	<header>
+		<!-- <div class="container">
+			<div class="clearfix top-header">
+
+				<div id="logo" class="col-lg-2 col-md-2 col-sm-3 col-xs-4 pr">
+					<img class="img-responsive" src="img/icf.jpg" alt="International Crane Foundation"/>
+				</div>
+
+				<div class="col-lg-3 col-md-3 col-sm-9 col-xs-8 pr">
+					<h1 class="logo-text">International Crane Foundation</h1>
+				</div>
+
+				<div class="col-lg-7 col-md-7 col-sm-9 navbar navbar-default main-menu">
+					<nav class="navbar-collapse">
+						<ul id="top-navigation" class="nav navbar-nav slimmenu">
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org">Home</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/about-icf/">About</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/support/">Support</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/about-icf/get-involved/careers/">Careers</a></li>
+							<li id="menu-item" class=""><a href="https://www.savingcranes.org/join-our-email-list/">Stay in Touch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="clearfix header-mainmenu">
+				<div class="col-lg-2 col-md-2 hidden-sm">&nbsp;</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<nav class="navbar navbar-default">
+						<div class="container">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div id="myNavbar" class="col-lg-12 col-md-12 col-sm-12 collapse navbar-collapse">
+								<ul id="navigation" class="nav navbar-nav">
+									<li class="menu-item"><a href="https://www.savingcranes.org/">Home</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/plan-a-visit/">Visit</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/category/newsroom/">Newsroom</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/events/">Events</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/species-field-guide/">Cranes</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/our-work/">Our Work</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/education/">Education</a></li>
+									<li class="menu-item"><a href="https://www.savingcranes.org/gallery/">Photo Gallery</a></li>
+									<li class="menu-item"><a href="http://craneshop.org/">Shop</a></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div> -->
+	</header>
+
+	<div class="container">
+		<div class="clearfix site-content">
+			<div id="content">
+				<div class="col-lg-12 col-md-12 col-sm-12" id="article-title">
+					<h2>Exploring Changes in the Eastern Sandhill Crane Population over 50 years</h2><em><strong>Data visualization:</strong> Dorn Moore, Jim Cunningham, & Randy Garcia</em><br><em><strong>Research Team:</strong> Anne Lacy, Jeb Barzen, Dorn Moore, Kristin Norris</em><br><br>
+				</div>
+				<!-- <div class="col-lg-6 col-md-7 col-sm-12">
+					<p>In 2015, researchers at the International Crane Foundation published a paper in the “Journal of Field Ornithology” titled “Changes in the number and distribution of Greater Sandhill Cranes in the Eastern Population” (<a href="background/JFODistributionSACR - 2015 Article.pdf" target="blank">download the original article</a>). The research team used data from annual bird surveys to explore the substantial changes in the population between 1965 and 2013. To help explore the data used in our analysis, we worked with a team of graduate students at the University of Wisconsin to build interactive tools to help you explore the data. </p>
+
+					<p>For winter analysis, the project team used data from the <a href="https://www.audubon.org/conservation/science/christmas-bird-count" target="blank">National Audubon Society’s Christmas Bird Count</a>. Volunteers - citizen scientists - count birds as part of the Christmas Bird Count between December 14 and January 5 each year. These data are used by researchers to help understand changes in bird populations. Our analysis of these data revealed both major increases in the number of Sandhill Cranes in the eastern population, but also significant changes in the timing and distribution of cranes during their winter migration.</p>
+				</div>
+				<div class="chart col-lg-6 col-md-5 col-sm-12">
+					<div class="chart_title">
+						Population Trend for Sandhill Cranes in the Eastern Population (1966-2013)
+					</div>
+					<div id="pop_chart_pane" >
+						<p>Bar Graph goes here</p>
+					</div>
+					<div class="chart_description">
+						A trend in the changing population of Sandhill Cranes is reflected in the number of cranes counted each year in the Christmas Bird Count. - Data from <a href="http://netapp.audubon.org/cbcobservation/" target="blank">National Audubon Society Christmas Bird Count</a>.
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<p>The majority of Sandhill cranes within the eastern population spend their summer/breeding months in or north of Michigan, Wisconsin and Minnesota. The data visualization below helps explore both the changes in numbers of cranes from 1965 to 2013 but also the changes in the distribution of the cranes during the Christmas Bird Count. It is easy to see the northward shift in the distribution of Sandhill Cranes and also how they spread to areas along the gulf coast and the eastern seaboard.</p>
+				</div> -->
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div id="map_pane" class="outline">
+						<div class="info-box">
+							<div class="slidecontainer">
+								<input type="range" min="1966" max="2013" step = "1" value="2013" class="slider" id="myRange">
+							</div>
+							<div class="info-box-items">
+								<div class="buttons" >
+									<div class="slider_tools_year">
+										<input type="button" class="btn btn-primary btn-sm" value="&#8249;" onclick="buttonBack()">
+										<input type="button" class="btn btn-primary btn-sm" value="&#8250;" onclick="buttonForward()">
+										
+										<div class="info-text">
+											Use the slider above to change the year.
+											<h2 id="userYear"></h2>
+										</div>
+										<div id= "mapButton" class="mapButton">
+											<a data-toggle="tooltip" title="Show Breeding Bird Survey locations that didn’t see Sandhill cranes">
+											<button class="buttonOut" onclick="togglePoints();"><text id="buttonOutText"></text></button>
+											</a>
+										</div>
+										<div id= "mapButton" class="mapButton">
+											<a data-toggle="tooltip" title="Auto Advance Annual Data">
+											<button class="buttonOut" onclick="AutoPlayToggle();"><text id="autoplayText"></text></button>
+											</a>
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="legend-block">
+									<div class="legend-title floatinghalf">
+										Sandhill Cranes Counted at each Breeding Bird Survey Location
+									</div>									
+								</div>
+							</div>
+						</div>
+						<div id="map" class="map-container"></div>
+					</div>
+				</div>
+				<!-- <div class="col-lg-12 col-md-12 col-sm-12">
+					Although these data do not necessarily reflect the ultimate wintering area for Sandhill Cranes in the region, they do reflect changes in the areas that will still support cranes as winter arrives. Sandhill Cranes are very cold tolerant; many of them will wait to migrate until open water for roosting and drinking has frozen over completely. Sandhill Cranes are able to postpone their migration until later than the Christmas Bird Count each year. The research team documented a significant northern shift in the average latitude of the eastern population at the Christmas Bird Count each year. The chart below shows the northward shift and the broadening range of latitudes where Sandhill Cranes are staging or wintering each year. <br><br>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="chart_title">Average Latitude of Sandhill Cranes Recorded in Christmas Bird Count (1966 - 2013)
+					</div>
+					<div id="lat_chart_pane" >
+					</div>
+					<div class="chart_description">
+						The changes in the average latitude for Sandhill Cranes in late December and early January reflect changes in the population, changing habitat and food sources, and a change in the climate during the same period. The northern trend of the average latitude (orange line) over time is accompanied by an envelope (blue area) showing the core of the population's spread across different latitudes.
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="copyright clearfix">
+			<div class="container">
+				<div class="copyright-txt"> &copy; 2019 International Crane Foundation - All Rights Reserved.</div>
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="lib/d3.min.js"></script>
+	<script type="text/javascript" src="lib/d3-request.min.js"></script>
+	<script type="text/javascript" src="lib/d3-queue.min.js"></script>
+	<script type="text/javascript" src="lib/geostats.min.js"></script>
+
+	<!-- <script src = "js/charts.js"></script> -->
+	<script src = "js/newMap.js"></script>
+	<script src = "js/lat_chart.js"></script>
+	<script src = "js/pop_chart.js"></script>
+	<script type="text/javascript">
+		window.onresize = function(){
+			$.getScript('js/pop_chart.js', function () {          
+		        drawPopChart;  
+		    });
+		    $.getScript('js/lat_chart.js', function () {          
+		        drawLatChart;  
+		    });  
+		}
+	</script>
+</body>
+
+</html>
