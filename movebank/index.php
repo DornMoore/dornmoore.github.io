@@ -59,8 +59,8 @@ echo "console.log(" . file_get_contents($url, false, $context) .");";
                     mapTypeId: google.maps.MapTypeId.SATELLITE
                 });
 
-                // movebankLogo = document.createElement('div');
-                // movebankLogo.innerHTML = '<a href="https://www.movebank.org"><img src="http://strd.de/logo_movebank_gmap6.png" height=23px/></a>';
+                movebankLogo = document.createElement('div');
+                movebankLogo.innerHTML = '<a href="https://www.movebank.org"><img src="http://strd.de/logo_movebank_gmap6.png" height=23px/></a>';
                 map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(movebankLogo);
 
                 timeDisplay = document.getElementById("time-display-div");
