@@ -1,7 +1,7 @@
 <script type="text/javascript">
 // Search the text for !! to find the lines that need to be modified to display your map.
 <?php 
-$url='https://www.movebank.org/movebank/service/json-auth?study_id=657640587&individual_local_identifiers[]=craneTBD24&&max_events_per_individual=10000&sensor_type=gps';
+$url='https://www.movebank.org/movebank/service/json-auth?study_id=657640587&individual_local_identifiers[]=craneTBD24&&max_events_per_individual=10000&timestamp_start=1550624400000&sensor_type=gps';
 
 // !! Modify the URL above to specify the following (replace XXX with your values):
 // study_id=XXX& -- Add the Movebank ID for your study, available in the Study Details.
