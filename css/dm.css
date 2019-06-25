@@ -7,13 +7,13 @@
 body {
   padding-top: 6px;
   font-family: Lato;
-  font-size: 1.0em;
+  font-size: 1em;
 }
 .jumbotron {
   background-color: lightgray;
   color: black;
 }
-h1{
+h1 {
   font-weight: 700;
 }
 .big-title {
@@ -26,12 +26,12 @@ h1{
   font-weight: 700;
 }
 .small-title {
+  padding-top: 30px;
   font-size: 1.5em;
   font-weight: 350;
 }
 
 .small-hide {
-  
 }
 .center {
   display: block;
@@ -49,7 +49,7 @@ h1{
 
 #contact {
   text-align: center;
-  text-decoration-color: black
+  text-decoration-color: black;
 }
 a #contact {
   color: black;

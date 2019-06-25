@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+  </head>
+  <body>
+    <div id="graph">
+      <p id="p2">Second paragraph</p>
+    </div>
+
+    <script>
+      d3.select("#graph").style("color", "red");
+      d3.select("#graph")
+        .append("p")
+        .text("Third paragraph.");
+      d3.request(
+        "https://ebird.org/barchartData?r=US-WI_3634&bmo=1&emo=12&byr=1900&eyr=2019&spp=sancra&fmt=json"
+      )
+        .header("Content-Type", "application/json")
+        .post(function(data) {
+          console.log(data);
+        });
+    </script>
+  </body>
+</html>
